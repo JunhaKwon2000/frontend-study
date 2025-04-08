@@ -1,17 +1,45 @@
-<!-- 기본 설정 바꾸기(ctrl + ,) -->
-<!-- font-size, tab-size = 2 -->
-<!-- 
-  lang(ko를 default로) 지정 사용자 정의 속성 추가
+<!-- VS Code 단축키 정리
+1) 사이드 바 열고 닫기: ctrl + b
+2) 빠른 열기(파일이나 기호 검색): ctrl + p
+3) 모든 명령 표시(명령 팔레트): ctrl + shift + p 또는 F1
+4) 탭 닫기: ctrl + w, 모든 탭 닫기: ctrl + k + w
+5) 검색: ctrl + f, 프로젝트 전체 검색: ctrl + shift + f
+6) 바꾸기: ctrl + h
+7) 라인 이동: alt + up/down
+8) 라인 복사: ctrl + c 또는 alt + shift + up/down
+9) 들여쓰기: tab, 내어쓰기: shift + tab
+10) 이전/다음 탭 열기: ctrl + PgUp/PgDn 또는 ctrl + tab
+11) 편집기 분할: ctrl + \ 또는 ctrl + alt + left/right
+12) 다중 선택: ctrl + d 또는 ctrl + alt + up/down 또는 alt + 마우스 클릭/드래그
+13) 라인 삭제: ctrl + shift + k
+14) 주석: ctrl + / 
 -->
-<!-- 
-    "emmet.variables": {
-        "lang": "ko"
-    }, user json 세팅 
--->
-<!-- shift+del = 영구삭제(휴지통으로 안감) -->
-<!-- 메뉴 한글화하기 -->
 
-<!-- 코드 정렬하기(alt + shift + f) 권장 X, 간혹 의도와 다르게 정렬됨 - 첨부터 깔끔하게 -->
+<!-- 기본 설정 바꾸기 : ctrl + , (font-size, tab-size = 2 등의 설정 변경 가능) -->
+<!-- shift+del : 는 영구삭제(휴지통으로 안감) -->
+<!-- 코드 정렬하기 : (alt + shift + f) 권장 X -->
+<!-- 
+"emmet.variables": {
+      "lang": "ko"
+  }, (user json 설정에서 입력, default 로 lang="ko" 설정됨) 
+-->
+
+<!-- Live Server : 개발을 위해 임시 로컬 서버를 오픈, 오로지 로컬에서만 접속 가능 -->
+<!-- 외부 접속을 허용하려면 AWS, Netlify, 카페24 같은 호스팅 서버에 업로드를 해야함 -->
+<!-- Live Server 로 서버 띄우기 : RC + Open with Live Server 또는 alt + l + o 또는 밑에 Go Live -->
+
+<!-- 클론은 어디든 딱 한번만, 업데이트 된 사항은 git pull origin 로 당겨오기 -->
+<!-- *중요* 학원, 집에서 작업한 내용은 꼭 push 하기, 다른 곳에서는 꼭 pull 해서 서로의 버전을 맞춰주기 -->
+<!-- 상위 폴더로 이동하기 : cd .. --> 
+<!-- 특정 폴더로 이동하기 : cd 폴더이름 -->
+<!-- 선생님 깃허브(프론트엔드 스터디) 주소 : https://github.com/geoblo/frontend-study-goni.git -->
+
+<!-- stage 에 전부 올리기 : git add . -->
+<!-- push 하기 : git push origin main -->
+<!-- clone 하기 : git clone 깃허브주소 -->
+<!-- pull 하기(*중요* 클론한 폴더에서) : git pull origin -->
+<!-- vscode 에서 명령어 사용 없이 가능 : 왼쪽 사이드 바의 브랜치 모양에서 할 수 있음 -->
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -28,13 +56,6 @@
   <br>
   <nav>Hello World!!!!</nav>
   <section>Hello World!</section>
-
-  <!-- 바로 브라우저에 띄우기 + 저장하면 바로 반영됨-->
-  <!-- RC + Open with Live Server || alt + l + o-->
-  <!--  
-    Live Server : 개발을 위해 임시 로컬 서버를 오픈
-    외부 접속을 허용하려면 AWS, Netlify 카페24 같은 호스팅 서버에 업로드
-  -->
 </body>
 
 </html>
