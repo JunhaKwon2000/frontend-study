@@ -12,7 +12,7 @@
    https://dummyimage.com
    https://picsum.photos/300/200 <- 300/200 은 크기
   -->
-  <img src="https://dummyimage.com/300x200" alt="샘플"> 
+  <img src="https://dummyimage.com/300x200" title="이미지" alt="샘플"> 
 
   <!-- audio (인라인) : 오디오 콘텐츠 삽입 및 재생 -->
   <!-- HTML 에서 지원하는 오디오 포맷 : MP3, WAV, OGG -->
@@ -35,11 +35,45 @@
   
   <!-- video(인라인) : 비디오 콘텐츠 삽입 및 재생 -->
   <!-- HTML 에서 지원하는 포맷 : MP4, WebM, OGG -->
-  <video controls width="320" height="240" autoplay muted>
+  <video controls width="320" height="240" autoplay muted title="비디오">
     <source src="Wildlife.mp4" type="video/mp4">
     <source src="Wildlife.webm" type="vido/webm">
   </video>
+  <!-- 웹 페이지에서 비디오를 재생하려면 다음을 수행
+    1) YouTube에 동영상 업로드
+    2) 동영상 ID를 기록
+    3) <iframe> 요소 정의
+    4) src속성에 YouTube URL 지정
+    5) width 및 height 속성을 사용하여 플레이어의 크기를 지정
+    6) URL에 다른 매개변수를 추가(아래 참조)
+  -->
+  <!-- inline frame(인라인): HTML 문서 내에 다른 문서를 삽입(웹 페이지 내에 웹 페이지를 표시)-->
+  <!-- src 에 물음표가 이미 들어있다 그럼 &로 이어주세요(쿼리스트링) -->
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ADbO-_vb5JU?si=3Xs-3ccCtbdyNRkR&mute=1" frameborder="0"></iframe>
+
+  <!-- 유튜브 자동재생 + 음소거 -->
+  <br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/wtveNdqk7-k?autoplay=1&mute=1" frameborder="0"></iframe>
   
+  <!-- 유튜브 재생목록
+    playlist: 재생할 비디오 id를 이어줌(쉼표로 구분)
+    loop 쓰려면 반드시 playlist 사용해야함
+  -->
+  <!-- 유튜브 반복재생 
+    0: 한 번만 재생(기본값)
+    1: 무한 재생
+  -->
+  <!-- playlist 필수 작성 -->
+  <br>  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/wtveNdqk7-k?playlist=wtveNdqk7-k,ADbO-_vb5JU&loop=1" frameborder="0"></iframe>
+
+  <!-- 유튜브 컨트롤 
+    0: 플레이어 컨트롤 표시 안함
+    1: 플레이어 컨트롤 표시(기본값)
+  -->
+  <br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ADbO-_vb5JU?si=3Xs-3ccCtbdyNRkR&mute=1&autoplay=1&controls=0" frameborder="0"></iframe>  
+
   <!-- *완전 중요* w3c schools 애서 tag, attribute 에 관한 설명 확인 가능 -->
 </body>
 </html>
