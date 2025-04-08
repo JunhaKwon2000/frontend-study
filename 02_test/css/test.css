@@ -1,7 +1,66 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  text-align: right;
+}
+
+.header_mail:hover,
+.header_image:hover {
+  text-decoration: underline;
+}
+
+.header_mail {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: grey;
+  font-size: 13px;
+}
+
+.header_image {
+  margin-right: 10px;
+  text-decoration: none;
+  color: grey;
+  font-size: 13px;
+}
+
+.logo {
+  margin-top: 153px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 form {
   text-align: center;
 }
 
-.searchBar {
-  margin-top: 50px;
+.searchBar .searchIcon {
+  position: absolute;
+  top: 44%;
+  left: 28%;
+  width: 25px;
+  height: 25px;
+}
+
+.searchBar input {
+  width: 700px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px lightgrey;
+  text-indent: 50px;
+  color: black;
+  font-size: 15px;
+}
+
+.searchBar input:focus {
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: grey;
+  font-size: 15px;
 }

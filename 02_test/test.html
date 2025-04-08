@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google</title>
   <link rel="stylesheet" href="./css/test.css">
+  <script src="js/main.js"></script>
 </head>
+
 <body>
   <header>
-    <img src="./images/google_logo.svg" alt="google_logo">
+    <a href="" class="header_mail">Gmail</a>
+    <a href="https://www.google.com/imghp?hl=ko&ogbl" class="header_image">이미지</a>
   </header>
   <main>
+    <div class="logo">
+      <img src="./images/google_logo.svg" alt="google_logo" title="image">
+    </div>
     <form action="https://www.google.com/search">
       <div class="searchBar">
-        <label for="search"></label>
-        <input type="text" name="q" id="search" placeholder="Google 검색 또는 URL 입력">
-      </div>
-      <div class="searchButton">
-        <button type="submit">Search</button>
+        <label for="search">
+          <img class="searchIcon" src="images/search.webp" alt="GoogleLens">
+        </label>
+        <input class="searchInput" type="text" name="q" id="search" placeholder="Google 검색 또는 URL 입력">
       </div>
     </form>
   </main>
 </body>
+
 </html>
