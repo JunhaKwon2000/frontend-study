@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* : -> 가상 클래스 선택자 */
+    /* :: -> 가상 요소 선택자 */
+    /* hidden 클래스에서 > foucs 시 > placeholder 의 color 를 transparent 하게해줘 */
+    .hidden:focus::placeholder {
+      color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <!-- input(인라인-블록) : 사용자로부터 데이터를 입력받음 -->
+  <!-- 인라인-블록 : 인라인 요소와 동일 + 블록 요소의 가로/세로 길이 및 상하/좌우 여백 모두 지정 가능 -->
+  <!-- type(속성) : 입력받을 데이터의 타입을 지정
+    text : 일반 텍스트 
+  -->
+  <input type="text" name="" id="">
+
+  <!-- value(속성) : 값을 미리 입력 받음 -->
+  <input type="text" name="" id="" value="data">
+
+  <!-- placeholder(속성) : 입력할 값의 힌트, 가이드 -->
+  <input type="text" name="" id="" placeholder="이름을 입력하세요!">
+  <!-- 팁 : foucs 시 placeholder 사라지게 하는 방법(위 css 참조) -->
+  <input class="hidden" type="text" name="" id="" placeholder="이름을 입력하세요!">
+  
+  <!-- disabled(속성) : 입력창 비활성화, 수정 불가, focus 불가(Tab 키로 선택 X), submit 불가 -->
+  <input type="text" name="" id="" placeholder="disabled 테스트" disabled>
+  <!-- (참고)readonly(속성) : 읽기 전용으로 설정, 수정 불가, focus 가능(Tab 키로 선택 O), submit 가능 -->
+  <input type="text" name="" id="" placeholder="readonly 테스트" readonly>
+  
+  <hr>
+
+  <!-- type="checkbox" : 체크박스 -->
+  <input type="checkbox" name="" id=""> Apple
+  <input type="checkbox" name="" id=""> Bannana
+
+  <!-- label 바인딩(*중요*label 필수 작성) : 1) label 요소 내부에 input 요소 배치 2) id 로 연결 -->
+  <!-- 
+    label 사용 이점(웹 접근성과 관련)
+    1. 매우 작은 영역(예: 확인란)을 클릭하는 데 어려움이 있는 사용자
+    - 사용자가 요소 내의 텍스트를 클릭하면 <label>입력이 토글되기 때문(히트 영역이 증가함)
+    2. 스크린 리더 사용자(사용자가 요소에 초점을 맞추면 레이블을 소리내어 읽음)
+  -->
+  <label>
+    <input type="checkbox" name="" id=""> Apple  
+  </label>
+  <input type="checkbox" name="" id="check_bannana"> 
+  <label for="check_bannana">Bannana</label>
+
+  <!-- checked(속성) : 값을 미리 체크해둘 수 있음 -->
+  <input type="checkbox" name="" id="check_apple2" checked>
+  <label for="check_apple2"> Apple</label>
+  <input type="checkbox" name="" id="check_bannana2" checked> 
+  <label for="check_bannana2">Bannana</label>
+
+  <hr>
+
+  <!-- type="radio" : 라디오 버튼 -->
+  <!-- name="그룹이름" : "그룹이름" 으로 그룹화 -->
+  <!-- 라디오 버튼은 그룹화되어 있어 오로지 하나의 선택지만 가능(체크박스는 복수 가능) -->
+  <label>
+    <input type="radio" name="" id=""> Apple
+  </label>
+  <label>
+    <input type="radio" name="" id=""> Bannana
+  </label>
+  <label>
+    <input type="radio" name="fruits" id="" checked> Apple
+  </label>
+  <label>
+    <input type="radio" name="fruits" id=""> Bannana
+  </label>
+
+  <hr>
+
+  <!-- type="button" : 버튼, 다른 태그 혼용 불가능 -->
+  <input type="button" name="" id="" value="닫기">
+  <!-- <button> 태그를 썼을 때의 장점 : 요소 내부에 텍스트 + 다른 태그 가능 -->
+  <button type="button" style="background-color: black;">
+    <b style="color: red;">닫기</b><br>
+    <span style="color: grey;">테스트</span>  
+  </button> 
+
+  <hr>
+
+  <!-- type="color"(Color Picker) : 색상 선택 도구 -->
+  <!-- value : 초기 색상 선택 가능 -->
+  <label for="cp">색상선택:</label>
+  <input type="color" name="" id="cp" value="#ff0000">
+
+  <hr>
+
+  <!-- type="date" : 날짜 선택 -->
+  <label for="date">생일:</label>
+  <input type="date" name="" id="date"> 
+  
+  <!-- type="datetime-local" : 날짜 + 시간 선택 -->
+  <label for="datetime">생일 (날짜/시간):</label>
+  <input type="datetime-local" name="" id="datetime"> 
+  
+  <!-- type="time" : 시간 선택 -->
+  <label for="time">시간:</label>
+  <input type="time" name="" id="time"> 
+
+  <hr>
+
+  <!-- type="email" : 이메일 입력, 자동으로 이메일 형식 유효성 검사를 해줌(이거 안씀, 정규성 형식 <- 이걸 씀) -->
+  <form action="/signup">
+    <label for="email">이메일:</label>
+    <input type="email" name="email" id="email">
+    <button type="submit">제출</button>
+  </form>
+
+  <hr>
+
+  <!-- type="file" : 파일 첨부 -->
+  <label for="file">파일 선택:</label>
+  <input type="file" name="" id="file">
+  <div>
+    <label for="files">파일 여러개 선택:</label>
+    <input type="file" name="" id="files" multiple>
+  </div>
+
+  <hr>
+
+  <!-- type="" : 범위 선택(default : 0 ~ 100) -->
+  <label for="vol">음량(0 ~ 10):</label>
+  <input type="range" name="" id="vol" min="0" max="10" step="2">
+
+  <hr>
+
+  <!-- type="password" : pw -->
+  <label for="pw">Password(최대 10자리):</label>
+  <input type="password" name="" id="pw" maxlength="10">
+
+  <hr>
+
+  <!-- <select> + <option> : 콤보 박스 -->
+  <!-- value(속성) : 서버로 전송되는 선택한 항목의 실제 값 -->
+  <!-- selected(속성) : 항목을 미리 선택함 -->
+
+  <label for="cars">차량 선택</label>
+  <div>
+    <select name="" id="cars">
+      <option value="none" selected>--- 차량을 선택해 주세요 ---</option>
+      <option value="Tesla">테슬라</option>
+      <option value="Kia">기아</option>
+      <option value="Toyota">도요타</option>
+    </select>
+  </div>
+
+  <hr>
+
+  <!-- <textarea> : 여러 줄 입력 -->
+  <p>
+    <label for="multi1">여러 줄 테스트 입력:</label>
+  </p> 
+  <textarea name="" id="multi1" cols="30" rows="6"></textarea>
+  <p>
+    <label for="multi2">여러 줄 테스트 입력(spellcheck 끄기):</label>
+  </p> 
+  <textarea name="" id="multi2" cols="30" rows="6" spellcheck="false"></textarea>
+  <p>
+    <label for="multi3">여러 줄 테스트 입력(크기 조절 불가능):</label>
+  </p> 
+  <textarea name="" id="multi3" cols="30" rows="6" style="resize: none;"></textarea>
+
+  <hr>
+
+  <!-- <form>(동기식 데이터 전송) : 사용자가 작성한 데이터를 서버로 전송함(서버 경로 + 방식(GET or POST) 두가지를 설정 해야함) -->
+  <!-- 동기식 : 응답이 올때까지 아무것도 못함(화면이 멈춤) -->
+  <!-- 비동기식 : 일단 데이터를 보내놓고 다른 작업 가능, 서버 응답이 오면 그때 처리, 예시로 지도 드래그할 때 정보 튀어나오는 것 -->
+  <form action="/login" method="post">
+    <input type="text" name="id" id="" placeholder="아이디">
+    <input type="password" name="pw" id="" placeholder="비밀번호">
+    <button type="submit">로그인</button>
+  </form>  
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+ul li {
+  list-style: none;
+}
+
+.menu li {
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+ul li {
+  float: left;
+}
+
+.menu ul ul li {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: darkturquoise
+}
+
+ul > li {
+  position: relative;
+}
+
+ul ul {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+ul li:hover > ul {
+  display: block;
+}
