@@ -1,9 +1,12 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 header {
   text-align: right;
+  margin-right: 30px;
+  margin-top: 10px;
 }
 
 .header_mail:hover,
@@ -27,8 +30,29 @@ header {
   font-size: 13px;
 }
 
+.header_login {
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 25px;
+  background-color: #0b57d0;
+  line-height: 40px;
+  width: 80px;
+  text-align: center;
+}
+
+.header_login {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header_login:hover {
+  border: 1px solid lightgray;
+  box-shadow: 0px 1px 0px lightgrey;
+}
+
 .logo {
-  margin-top: 153px;
+  margin-top: 205px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -39,8 +63,8 @@ form {
 
 .searchBar .searchIcon {
   position: absolute;
-  top: 44%;
-  left: 28%;
+  top: 41.5%;
+  left: 32.5%;
   width: 25px;
   height: 25px;
 }
@@ -63,4 +87,83 @@ form {
 .searchBar input::placeholder {
   color: grey;
   font-size: 15px;
+}
+
+nav {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.lucky a {
+  margin-right: 5px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 140px;
+  line-height: 35px;
+  border: 1px solid white;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  color: #3c4043;
+  text-decoration: none;
+}
+
+.lucky a:hover {
+  border: 1px solid lightgray;
+  box-shadow: 0px 1px 0px lightgrey;
+}
+
+.ftKr {
+  padding: 0;
+  margin-top: 340px;
+  background-color: #f7f8f9;
+  line-height: 50px;
+  border: 1px solid lightgray;
+  border-width: 0 0 1px;
+}
+
+.ftlink {
+  margin-top: 0;
+  border: 1px solid lightgray;
+  border-width: 0 0 0;
+  background-color: #f7f8f9;
+  line-height: 50px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.ftKr span {
+  margin-left: 30px;
+}
+
+.ftlink a {
+  color: black;
+  text-decoration: none;
+}
+
+.ftlink a:hover {
+  text-decoration: underline;
+}
+
+.ftlink .btad {
+  margin-left: 32px;
+}
+
+.ftlink .btbs {
+  margin-left: 32px;
+}
+
+.ftlink .btsl {
+  margin-left: 32px;
+}
+
+.ftlink .btpi {
+  margin-left: 1360px;
+}
+
+.ftlink .btrts {
+  margin-left: 32px;
+}
+
+.ftlink .btopt {
+  margin-left: 32px;
 }
