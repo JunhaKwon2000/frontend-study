@@ -61,13 +61,13 @@ form {
   text-align: center;
 }
 
-.searchBar .searchIcon {
+/* .searchBar .searchIcon {
   position: absolute;
   top: 41.5%;
   left: 32.5%;
   width: 25px;
   height: 25px;
-}
+} */
 
 .searchBar input {
   width: 700px;
@@ -78,6 +78,13 @@ form {
   text-indent: 50px;
   color: black;
   font-size: 15px;
+}
+
+.searchBar input::placeholder::before {
+  display: inline-block;
+  content: "";
+  background-image: url("images/search.webp");
+  background-size: 30px 30px;
 }
 
 .searchBar input:focus {

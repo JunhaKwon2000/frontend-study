@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 가상 요소 선택자 : HTML 에 가상의 요소를 생성 또는 제어 가능 */
+    /* ::before, ::after 사용할 때는 반드시 CSS content 속성과 같이 사용할 것 */
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+
+    /* ::before : 요소 *내부 앞*에 내용 샆입 */
+    /* .box::before {
+      content: "앞!";
+    } */
+
+    
+    /* ::after : 요소 *내부 앞*에 내용 샆입 */
+    /* .box::after {
+      content: "뒤!";
+    } */
+
+    /* 꼭 content 안에 텍스트가 아니어도 댐, 그렇지만 content 속성은 꼭 넣을 것(content: "";) */
+    /* ::before, ::after : 인라인 요소이므로 가로, 세로 지정 불가능, 해주고 싶으면 display 값을 다른 것(block)으로 바꾸셈 */
+    /* ::before, ::after 를 잘 활용하면 HTML 구조 추가 또는 class 속성 값의 추가 없이 제어가 가능함 */
+    .box::after {
+      display: block;
+      content: ""; /* 필수 속성*/
+      width: 10px;
+      height: 30px;
+      background-color: blue;
+    }
+
+    /* ::placeholder(전체 검색), ::-webkit-scrollbar */
+  </style>
+</head>
+<body>
+  <div class="box">
+    Content !
+  </div>  
+</body>
+</html>

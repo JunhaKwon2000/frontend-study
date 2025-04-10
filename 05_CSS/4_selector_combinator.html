@@ -38,6 +38,19 @@
       color: red;
     }
 
+
+    /* 팁 : input, button 이 반복되는 경우 그 사이의 간격을 조정할 때 */
+    input {
+      display: block;
+    }
+
+    input + input {
+      margin-top: 10px;
+    }
+
+    button + button {
+      margin-left: 22px;
+    }
   </style>
 </head>
 <body>
@@ -59,5 +72,15 @@
       <li class="apple">배</li>
     </ul>
   </div>
+
+
+  <!-- 팁 : input, button 이 반복되는 경우 그 사이의 간격을 조정할 떄 -->
+  <input type="text" name="" id="">
+  <input type="text" name="" id="">
+  <input type="text" name="" id="">
+  <br>
+  <button type="button">버튼</button>
+  <button type="button">버튼</button>
+  <button type="button">버튼</button>
 </body>
 </html>
