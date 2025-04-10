@@ -177,6 +177,7 @@
   <!-- 동기식 : 응답이 올때까지 아무것도 못함(화면이 멈춤) -->
   <!-- 비동기식 : 일단 데이터를 보내놓고 다른 작업 가능, 서버 응답이 오면 그때 처리, 예시로 지도 드래그할 때 정보 튀어나오는 것 -->
   <form action="/login" method="post">
+    <!-- name(속성) : 서버로 값을 전달할 때 unique 하게 구분하기 위한 이름(동기식으로 보낼 때, 비동기식은 없어도 댐) -->
     <input type="text" name="id" id="" placeholder="아이디">
     <input type="password" name="pw" id="" placeholder="비밀번호">
     <button type="submit">로그인</button>

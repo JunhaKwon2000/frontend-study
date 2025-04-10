@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="../02_test/images/favicon.ico" type="image/x-icon">
+
+  <style>
+    /* 선택자선택자... : 일치선택자, 동시에 만족하는 요소 선택(순서 주의) */
+    /* span.orange.red.abc {
+      color: red;
+    } */
+    /* span.orange {
+      color: red;
+    }  */
+
+    /* > : 자식 선택자, 자식 요소(바로 하위)를 선택함 */
+    /* ul > .orange {
+      color: red;
+    } */
+
+    /* space : 하위 선택자, 하위 요소를 선택함, *제일 많이 씀* */
+    /* div .orange {
+      color: red;
+    } */
+
+    /* + : 인접 형제 선택자, *인접*한 다음 형제 요소 *딱 하나*를 선택함, input + input 등으로 로그인 창 구현할 때 여백을 조정하기 등 */
+    /* .orange + .apple {
+      color: red;
+    } */
+
+    /* ~ : 일반 형제 선택자, 다음 형제 요소 *모두*를 선택, 사용 빈도는 낮지만 다음 형제 요소들 중에서 특정 요소를 고를 때 유용 */
+    /* .orange ~ li {
+      color: red;
+    } */
+    .orange ~ .apple {
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>사과</li>
+      <li>딸기</li>
+      <li class="orange">오렌지</li>
+    </ul>
+    <div>당근</div>
+    <p>토마토</p>
+    <!-- 클래스는 여러개 넣는 것이 가능(공백으로 구분) -->
+    <span class="orange">오렌지</span>
+    <ul>
+      <li class="orange">망고</li>
+      <li>수박</li>
+      <li>멜론</li>
+      <!-- <li class="orange">키위</li> -->
+      <li class="apple">배</li>
+    </ul>
+  </div>
+</body>
+</html>

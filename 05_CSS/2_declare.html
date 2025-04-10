@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- [css 적용 방식]외부 스타일 시트(권장) : main.css 를 통째로 가지고 옴, 병렬 방식(개발자 도구 -> Network 탭) -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/box.css">
+  <link rel="shortcut icon" href="../02_test/images/favicon.ico" type="image/x-icon">
+  <!-- [css 적용 방식]내부 스타일 시트 : html 내부에 직접 스타일 작성, 비효율적임(유지보수 측면) --> 
+  <style>
+    div {
+      color: red;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- [css 적용 방식]인라인 스타일 : 태그 안에 직접 스타일 작성, style(속성)은 전역 속성, *우선순위가 제일 높으므로* 남발시 스타일 덮어쓰기 불가능 -->
+  <div style="color: green;" class="box">JUNHA</div>
+  <div>KWON</div>
+</body>
+</html>

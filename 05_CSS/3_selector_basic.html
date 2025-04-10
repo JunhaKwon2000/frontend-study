@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="../02_test/images/favicon.ico" type="image/x-icon">
+  <style>
+    /* 선택자 우선순위 순서 */
+    /* 전체 < 태그 < 클래스 < 아이디 순으로 우선순위가 높음(오른쪽으로 갈수록 더 구체적이고 명확한 선택) */
+
+    /* * : 전체 선택자, 모든 요소를 선택함, 단독으로는 스타일 초기화 or 공통 스타일을 적용할 때(글꼴, 글자크기 등), 복합적으로는 어떤 범위안에서 모든 요소를 선택할 때(예 : div *)
+    * {
+      margin: 0;
+      padding: 0;
+      color: red;
+    } */
+
+    /* tag : 태그 선택자, 태그 이름으로 해당 태그를 선택함 */
+    /* li {
+      color: red;
+    } */
+
+    /* .class : 클래스 선택자, 클래스 속성의 값으로 선택함 */
+    /* .orange {
+      color: red;
+    } */
+
+    /* #id : id 선택자, id 속성의 값으로 선택함 */
+    #orange {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>사과</li>
+      <li>딸기</li>
+      <li id="orange" class="orange">오렌지</li>
+    </ul>
+    <div>당근</div>
+    <p>토마토</p>
+    <span class="orange">오렌지</span>
+  </div>
+</body>
+</html>
