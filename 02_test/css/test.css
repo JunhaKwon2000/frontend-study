@@ -80,11 +80,12 @@ form {
   font-size: 15px;
 }
 
-.searchBar input::placeholder::before {
-  display: inline-block;
+.searchBar input::before {
+  display: block;
   content: "";
-  background-image: url("images/search.webp");
-  background-size: 30px 30px;
+  background-image: url("../images/search.webp");
+  width: 30px;
+  height: 30px;
 }
 
 .searchBar input:focus {
