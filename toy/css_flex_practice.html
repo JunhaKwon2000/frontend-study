@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      margin-top: 20px;
+    }
+
+    .box-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .box-container div + div {
+      margin-left: 20px;
+    }
+    .box-container div a {
+      text-decoration: none;
+      color: grey;
+    }
+    .box-container div span:hover {
+      text-decoration: underline;
+    }
+
+    .head {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="box-container">
+      <div class="box"><a href="#"><span>로그인</span></a></div>
+      <div class="box"><a href="#"><span>회원가입</span></a></div>
+      <div class="box"><a href="#"><span>사이트맵</span></a></div>
+    </div>
+    <div class="head">
+      <span>사이트</span>
+    </div>   
+  </header>
+  <main>
+    <div class="main-container">
+      <div class="main-yt">aaa</div>
+      <div class="main-nv">aaa</div>
+      <div class="main-aasd">aaa</div>
+    </div>
+  </main>
+</body>
+</html>

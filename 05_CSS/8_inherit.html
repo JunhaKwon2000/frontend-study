@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 스타일 상속 : 해당 요소 + 하위 요소까지 스타일 적용, 상속이 가능한 CSS 속성은 대부분 글자와 관련됨(개발자 도구에서 상속된 스타일 확인 가능), w3school 에서 속성의 'Inherited: ' 확인 */
+    .animal {
+      color: red;
+    }
+    /* 스타일 상속 활용 : 웹앱 내 기본 스타일 적용 */
+    body {
+      font-family: monospace;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #333;
+    }
+    /* 강제 상속 : 자동으로 상속되지 않는 CSS 속성을 강제로 상속 */
+    .parent {
+      width: 300px;
+      height: 200px;
+      background-color: cyan;
+    }
+    .child {
+      width: 100px;
+      height: inherit;
+      background-color: inherit;
+      position: fixed; /* viewport 기준으로 고정 */
+      top: 100px;
+      right: 10px;
+    }
+    /* inherit : 모든 CSS 속성과 HTML 요소에 사용 가능(예시 - button 의 font-size: inherit; 으로 설정해 button 의 기본 설정 덮어쓰기) */
+    button {
+      font-size: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="ecosystem">
+    생태계
+    <div class="animal">
+      동물
+      <div class="tiger">호랑이</div>
+      <div class="lion">사자</div>
+      <div class="elephant">코끼리</div>
+    </div>
+    <div class="plant">식물</div>
+  </div>
+
+  <hr>
+
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+
+  <hr>
+
+  <button type="button">버튼</button>
+</body>
+</html>

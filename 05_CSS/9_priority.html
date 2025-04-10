@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Specificity : 상속(브라우저 기본 스타일보다도 우선순위 낮음) -> * -> tag -> .class -> #id -> inline style -> !important(무조건 이김, 절대 변경되면 안되는 경우만 사용, 권장 X) */
+    /* Specificity 가 같을 경우 : 더 밑에 것이 적용, 우선순위 점수를 더 높게(더 명확하게) 설정해서 오버라이드 가능, 개발자 도구에서는 알아서 정렬해줌(높 -> 낮) */
+    div {
+      color: red !important;
+    }
+    body {
+      color: violet;
+    }
+    * {
+      color: darkblue;
+    }
+    div {
+      color: royalblue;
+    }
+    div.hello {
+      color: green;
+    }
+    .hello {
+      color: azure;
+    }
+    #hello {
+      color: greenyellow;
+    }
+  </style>
+</head>
+<body>
+  <div id="hello" class="hello" style="color: goldenrod;">
+    Hello World!
+  </div>
+</body>
+</html>
