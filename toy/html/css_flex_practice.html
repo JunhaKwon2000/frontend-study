@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>검색</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <header>
+    <div class="box-container">
+      <div class="box"><a href="#"><span>로그인</span></a></div>
+      <div class="box"><a href="#"><span>회원가입</span></a></div>
+      <div class="box"><a href="#"><span>사이트맵</span></a></div>
+    </div>
+    <div class="head">
+      <span>사이트</span>
+    </div>   
+  </header>
+  <main>
+    <div class="main-container">
+      <div class="main-nv">
+        <form action="https://search.naver.com/search.naver">
+          <div>
+            <label for="NAVER"><img src="../image/naver.jpg" alt="네이버"></label>
+          </div>
+          <input type="text" name="query" id="NAVER" placeholder="네이버에서 검색하세요">
+          <div class="n_submit">
+            <button type="submit">검색</button>
+          </div>
+        </form>
+      </div>
+      <div class="main-yt">
+        <form action="https://www.youtube.com/results">
+          <label for="Youtube"><img src="../image/youtube.png" alt="유튜브"></label>
+          <div>
+            <input type="text" name="search_query" id="Youtube" placeholder="유튜브에서 검색하세요">
+          </div>
+          <div class="y_submit">
+            <button type="submit">검색</button>
+          </div>
+        </form>
+      </div>
+      <div class="main-gl">
+        <form action="https://www.google.com/search">
+          <div>
+            <label for="Google"><img src="../image/google_logo.svg" alt="구글"></label>
+          </div>
+          <input type="text" name="q" id="Google" placeholder="구글에서 검색하세요">
+          <div class="g_submit">
+            <button type="submit">검색</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
