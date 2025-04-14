@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Practice</title>
   <style>
+    body {
+      height: 5000px;
+    }
     .container-1 {
       width: 250px;
       height: 100px;
@@ -79,6 +82,19 @@
       text-align: center;
       line-height: 30px;
     } 
+
+    .container-6 {
+      height: 500px;
+      border: 5px solid violet;
+    }
+    .container-6 > .content-6 {
+      width: 300px;
+      height: 200px;
+      border: 3px solid blue;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+    }
   </style>
 </head>
 <body>
@@ -107,5 +123,19 @@
       Main Text.
     </div>
   </div>
+  <hr>
+  <div class="container-6">
+    <div class="content-6">
+      <span>광고</span>
+      <div class="content_close">X</div>
+    </div>
+  </div>
+
+
+  <script>
+    function hideModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
