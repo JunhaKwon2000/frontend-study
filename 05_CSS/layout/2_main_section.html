@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,25 +8,34 @@
   <title>Document</title>
 
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
     .main-background {
       text-align: center;
       background-image: url(./images/shoes.jpg);
       background-position: 0, 0, 0, 20%;
-      padding-bottom: 300px;
+      padding-bottom: 180px;
       background-size: cover;
     }
-    .main-background > h4 {
+
+    .main-background>h4 {
       padding-top: 70px;
       margin-top: 0;
       color: white;
     }
+
     .main-background .main-content {
       color: white;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
+
     .main-background .main-title {
       font-size: 50px;
     }
+
     .main-background button {
       width: 120px;
       height: 40px;
@@ -34,10 +44,13 @@
       background-color: white;
       font-size: 18px;
     }
+
     .main-background button:hover {
       border: 1px solid black;
     }
+
     .main-background .sub-description {
+      /* 부모의 80%, 여기서는 .main-background */
       width: 80%;
       max-width: 700px;
       border: 1px solid white;
@@ -46,31 +59,39 @@
       z-index: 1;
       left: 0;
       right: 0;
-      top: 550px;
+      top: 410px;
       margin: auto;
+      margin-top: 18px;
       background-color: white;
     }
+
     .main-background .sub-description h4 {
       margin-top: 30px;
     }
+
     .sub-description p {
       margin-bottom: 30px;
     }
+
     .history {
-      padding-top: 130px;
+      padding-top: 110px;
       padding-bottom: 1000px;
-      background-color: #dbd5d5;
+      background-color: #aaa6a6;
     }
+
     .history h4 {
       text-align: center;
     }
   </style>
 </head>
+
 <body>
   <div class="main-background">
     <h4 class="main-title">Buy our excellent shoes!</h4>
     <p class="main-content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, voluptatem sapiente atque magni voluptatum veritatis, officiis corrupti itaque sequi nisi ducimus ipsa, deserunt ut doloremque possimus animi ratione. Doloremque, recusandae.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, voluptatem sapiente atque magni voluptatum
+      veritatis, officiis corrupti itaque sequi nisi ducimus ipsa, deserunt ut doloremque possimus animi ratione.
+      Doloremque, recusandae.
     </p>
     <button type="button" class="main-button">Buy Now</button>
 
@@ -88,13 +109,21 @@
   <div class="history">
     <h4>Our best shoes & History</h4>
     <ul>
-      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, minima non ut blanditiis, mollitia veniam excepturi quia corporis provident quibusdam fuga odit modi repellat voluptas saepe libero quam, praesentium nihil?</li>
-      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum accusamus molestiae possimus distinctio cupiditate culpa, aut velit commodi et! Rerum est, ad repellendus vero distinctio ab modi dicta officia voluptates?</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, molestias et soluta at atque officia perferendis voluptates ipsa, animi optio dolor ex aperiam asperiores quasi quis, iste velit. Omnis, veniam?</li>
-      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos ipsam facilis error dolorum quidem sunt exercitationem, iure atque quis reprehenderit sapiente esse similique tenetur a harum. Cumque, veritatis id!</li>
-      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum qui nobis beatae fugiat quam dolorem blanditiis?</li>
+      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, minima non ut blanditiis, mollitia veniam
+        excepturi quia corporis provident quibusdam fuga odit modi repellat voluptas saepe libero quam, praesentium
+        nihil?</li>
+      <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum accusamus molestiae possimus distinctio
+        cupiditate culpa, aut velit commodi et! Rerum est, ad repellendus vero distinctio ab modi dicta officia
+        voluptates?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, molestias et soluta at atque officia perferendis
+        voluptates ipsa, animi optio dolor ex aperiam asperiores quasi quis, iste velit. Omnis, veniam?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eos ipsam facilis error dolorum quidem sunt
+        exercitationem, iure atque quis reprehenderit sapiente esse similique tenetur a harum. Cumque, veritatis id!
+      </li>
+      <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum qui nobis beatae fugiat quam dolorem
+        blanditiis?</li>
     </ul>
   </div>
 </body>
+
 </html>
-<!-- 제한: 700px -->

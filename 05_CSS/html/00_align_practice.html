@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     body {
       height: 5000px;
     }
+
     .container-1 {
       width: 250px;
       height: 100px;
@@ -27,7 +29,8 @@
       /* 정렬: 부모 요소에 position(relative) 추가 */
       position: relative;
     }
-    .container-2 > .content-2 {  
+
+    .container-2>.content-2 {
       width: 100px;
       height: 30px;
       border: 3px solid blue;
@@ -48,7 +51,8 @@
       /* 정렬: 부모 요소에 position(relative) 추가 */
       position: relative;
     }
-    .container-3 > .content-3 {
+
+    .container-3>.content-3 {
       width: 100px;
       height: 30px;
       border: 3px solid blue;
@@ -75,28 +79,48 @@
       justify-content: center;
       align-items: center;
     }
-    .container-5 > .content-5 {
+
+    .container-5>.content-5 {
       width: 100px;
       height: 30px;
       border: 3px solid blue;
       text-align: center;
       line-height: 30px;
-    } 
+    }
 
     .container-6 {
-      height: 500px;
+      width: 500px;
+      height: 300px;
       border: 5px solid violet;
-    }
-    .container-6 > .content-6 {
-      width: 300px;
-      height: 200px;
-      border: 3px solid blue;
       position: fixed;
-      bottom: 30px;
+      bottom: 300px;
       right: 30px;
+      z-index: 1;
+      background-image: url("../layout/images/product1.jpg");
+      background-size: contain;
+    }
+
+    .container-6>.content-6 {
+      width: 30px;
+      position: relative;
+    }
+
+    .container-6>.content-6>div {
+      position: absolute;
+      left: 470px;
+      bottom: 0px;
+    }
+
+    .content_close {
+      width: 20px;
+      height: 20px;
+      border: 3px solid red;
+      text-align: center;
+      line-height: 20px;
     }
   </style>
 </head>
+
 <body>
   <div class="container-1">
     Main Text.
@@ -127,15 +151,20 @@
   <div class="container-6">
     <div class="content-6">
       <span>광고</span>
-      <div class="content_close">X</div>
+      <div class="content_close" id="close" onclick="hideModal(event)">X</div>
     </div>
   </div>
 
 
   <script>
-    function hideModal() {
-      document.getElementById("modal").style.display = "none";
+    function hideModal(event) {
+      event.stopPropagation();
+      const container = event.target.closest('.container-6');
+      if (container) {
+        container.style.display = 'none';
+      }
     }
   </script>
 </body>
+
 </html>
