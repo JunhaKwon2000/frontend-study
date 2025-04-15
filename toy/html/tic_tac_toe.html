@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omok (Gomoku)</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4e4c1; /* Light wooden background */
+      margin: 0;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(19, 1fr); /* 19 columns */
+      grid-template-rows: repeat(19, 1fr);   /* 19 rows */
+      width: 760px;
+      height: 760px;
+      background-color: #deb887; /* Wooden board color */
+      position: relative;
+    }
+
+    .board div {
+      border: 1px solid black; /* Grid lines */
+      text-align: center;
+      font-size: large;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .board div::before {
+      content: '';
+      display: block;
+      width: 80%;
+      height: 80%;
+      border-radius: 50%; /* Circular stones */
+      background-color: transparent;
+    }
+
+    .board div.black::before {
+      background-color: black; /* Black stone */
+    }
+
+    .board div.white::before {
+      background-color: white; /* White stone */
+      border: 1px solid black; /* Outline for white stones */
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 2px solid black;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="board" id="board"></div>
+
+  <div class="overlay" id="overlay" onclick="closeModal()"></div>
+  <div class="modal" id="modal">
+    <h2 id="winner-message"></h2>
+    <button onclick="resetGame()">Play Again</button>
+  </div>
+
+  <script>
+    const boardSize = 19;
+    let board = Array.from({ length: boardSize }, () => Array(boardSize).fill(null)); // 19x19 board
+    let currentPlayer = 'black'; // Start with black stone
+    let gameActive = true;
+
+    // Initialize the board
+    const boardElement = document.getElementById('board');
+    for (let i = 0; i < boardSize; i++) {
+      for (let j = 0; j < boardSize; j++) {
+        const cell = document.createElement('div');
+        cell.dataset.row = i;
+        cell.dataset.col = j;
+        cell.onclick = () => makeMove(cell, i, j);
+        boardElement.appendChild(cell);
+      }
+    }
+
+    function makeMove(cell, row, col) {
+      if (!gameActive || board[row][col]) return; // Ignore if game is over or cell is already filled
+
+      board[row][col] = currentPlayer;
+      cell.classList.add(currentPlayer);
+
+      if (checkWinner(row, col)) {
+        showModal(`${currentPlayer === 'black' ? '●' : '○'} Wins!`);
+        gameActive = false;
+        return;
+      }
+
+      currentPlayer = currentPlayer === 'black' ? 'white' : 'black'; // Switch player
+    }
+
+    function checkWinner(row, col) {
+      const directions = [
+        { dr: 0, dc: 1 },  // Horizontal
+        { dr: 1, dc: 0 },  // Vertical
+        { dr: 1, dc: 1 },  // Diagonal (top-left to bottom-right)
+        { dr: 1, dc: -1 }  // Diagonal (top-right to bottom-left)
+      ];
+
+      for (const { dr, dc } of directions) {
+        let count = 1;
+
+        // Check in the positive direction
+        for (let i = 1; i < 5; i++) {
+          const r = row + dr * i;
+          const c = col + dc * i;
+          if (r >= 0 && r < boardSize && c >= 0 && c < boardSize && board[r][c] === currentPlayer) {
+            count++;
+          } else {
+            break;
+          }
+        }
+
+        // Check in the negative direction
+        for (let i = 1; i < 5; i++) {
+          const r = row - dr * i;
+          const c = col - dc * i;
+          if (r >= 0 && r < boardSize && c >= 0 && c < boardSize && board[r][c] === currentPlayer) {
+            count++;
+          } else {
+            break;
+          }
+        }
+
+        if (count >= 5) return true; // Winner found
+      }
+
+      return false;
+    }
+
+    function showModal(message) {
+      document.getElementById('winner-message').textContent = message;
+      document.getElementById('modal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    function resetGame() {
+      board = Array.from({ length: boardSize }, () => Array(boardSize).fill(null));
+      currentPlayer = 'black';
+      gameActive = true;
+      document.querySelectorAll('.board div').forEach(cell => cell.className = '');
+      closeModal();
+    }
+  </script>
+</body>
+</html>
