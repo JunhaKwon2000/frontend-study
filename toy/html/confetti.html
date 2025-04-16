@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confetti Blast</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #f4f4f4;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      animation: confetti-fall 2s ease-out forwards;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(500px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    .clickable {
+      width: 200px;
+      height: 100px;
+      background-color: royalblue;
+      color: white;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px auto;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="clickable" onclick="createConfetti(event)">Click Me!</div>
+
+  <script>
+    function createConfetti(event) {
+      const confettiCount = 50; // Number of confetti pieces
+      const confettiContainer = document.createElement('div');
+      confettiContainer.style.position = 'absolute';
+      confettiContainer.style.left = `${event.clientX}px`;
+      confettiContainer.style.top = `${event.clientY}px`;
+      document.body.appendChild(confettiContainer);
+
+      for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.backgroundColor = getRandomColor();
+        confetti.style.left = `${Math.random() * 200 - 100}px`; // Random horizontal spread
+        confetti.style.top = `${Math.random() * 200 - 100}px`; // Random vertical spread
+        confetti.style.animationDelay = `${Math.random() * 0.5}s`; // Random delay
+        confettiContainer.appendChild(confetti);
+
+        // Remove confetti after animation
+        confetti.addEventListener('animationend', () => {
+          confetti.remove();
+        });
+      }
+
+      // Remove container after all confetti are gone
+      setTimeout(() => {
+        confettiContainer.remove();
+      }, 2000);
+    }
+
+    function getRandomColor() {
+      const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FFC733'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIZ</title>
+  <link rel="stylesheet" href="./3_blog_list.css">
+</head>
+<body>
+  <!-- 팁: 레이아웃을 만드는 기본
+    어떤 웹앱을 만들던 레이아웃은 항상 수평(행)으로 자른 후 박스부터 만들고 시작하면 됨
+    이 박스들은 전부 <div> 로 구현해 놓으면 됨(시맨틱 태그도 최대한 활용)
+    이 박스들 안에 글/그림 넣으면 끝!
+    이 때 <div> 는 블록 요소이기 때문에 위아래로 배치됨
+    좌우로 나란히 배치하고 싶으면 float, inline-block, Flexbox(권장) 를 사용하세요!
+  -->
+
+  <!-- navbar -->
+  <nav>
+    <ul class="navbar">
+      <li>
+        <a href="#">영화</a>
+      </li>
+      <li>
+        <a href="#">맛집</a>
+      </li>
+      <li>
+        <a href="#">IT</a>
+      </li>
+      <li>
+        <a href="#">컴퓨터</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- blog list item -->
+  <div class="container">
+    <div class="blog-list-item">
+      <div class="blog-content">
+        <div class="content-header">
+          <!-- 프로필 이미지 -->
+          <img src="./images/github_icon.jpg" alt="프로필">
+          <!-- 작성자, 시간 -->
+          <div class="blog-name">
+            <div><span>권준하</span></div>
+            <div>1시간 전</div>
+          </div>
+        </div>
+        <div class="content-body">
+          <!-- 글 제목, 글 내용 -->
+          <h4>가성비 맛집을 발견했어요!</h4>
+          <p>
+            가산 디지털 단지에 맛집이 정말 많네요!<br>
+            어제는 윤셰프라는 구내 식당을 한번 방문했는데요,<br>
+            한식 뷔페 형식의 구내 식당이고, 가겨은 7000원이에요!<br>
+            근데 놀라운 사실... 바로 윤셰프는 무한리필이에요!!!<br>
+            정말 놀랍지 않나요..? 단 7000원으로 무한리필이라니..ㅠ<br>
+            요즘 7000원으로는 밥 한끼 먹기도 힘든데..<br> 
+            정말 사장님한테 감동했어요! 앞으로 자주 방문할 것 같네요!!<br> 
+            그럼 20000~
+          </p>
+        </div>
+      </div>
+      <div class="blog-img">
+        <img src="https://picsum.photos/300/330" alt="샘플">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

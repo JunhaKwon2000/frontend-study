@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition</title>
+  <style>
+    div {
+      /* 전 상태 */
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      font-size: 20px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .test {
+      /* 전환 효과가 가능한지 여부: W3S 에서 animatable 여부 확인 */
+
+      /* 전환 효과를 1초 동안 추가 */
+      /* transition: 1s; */
+
+      /* 특정 값에만 전환 효과 주기(나머지는 바로 바뀜) */
+      /* transition: width 1s; */
+      /* transition: background-color 1s; */
+      /* transition: width 0.1s; */
+
+      /* 전환 효과 여러개 설정해보기 */
+      /* transition: width 0.5s, background-color 2s; */
+
+      /* 대기 시간 지정해보기(지속시간, 대기시간) */
+      transition: 1s 0.5s;
+    }
+
+    .test:active {
+      /* 후 상태 */
+      width: 100%;
+      background-color: royalblue;
+    }
+
+    div + div {
+      margin-top: 20px;
+    }
+
+    .t-1 {
+      transition: width 2s, height 4s linear 3s;
+    }
+
+    .t-1:hover {
+      /* transition: width 2s, height 4s linear 3s; */
+      width: 300px;
+      height: 300px;
+    }
+
+    .t-2 {
+      transition: width 3s cubic-bezier(.98,.99,0,2.18);
+    }
+
+    .t-2:hover {
+      width: 100%;
+    }
+
+    .t-3 {
+      position: relative;
+      left: 0;
+      transition: left 1s;
+    }
+
+    .t-3:active {
+      left: 300px;
+    }
+
+    /* 화면 바깥에 배치되었다가 메뉴 버튼을 눌렀을 때 화면에 나오도록 할 때 사용 가능(js 포함) */
+
+    nav {
+      border: 5px solid black;
+    }
+
+    nav > div {
+      transition: 4s;
+    }
+
+    nav > div:active {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Transition(전환 효과)</h1>
+  <h2>요소의 전, 후 상태의 중간 단계를 자연스럽게 만들어주는 효과</h2>
+  <div class="test"></div>
+  <hr>
+  <div class="t-1">test 1</div>
+  <div class="t-2">test 2</div>
+  <div class="t-3">test 3</div>
+  <hr>
+  <header>
+    로딩창
+  </header>
+  <nav>
+    <div>로딩중...</div>
+  </nav>
+  <hr>
+</body>
+</html>
