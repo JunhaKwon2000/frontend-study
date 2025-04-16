@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="./4_form_input.css">
+</head>
+<body>
+  <h2>연습</h2>
+  <form action="">
+    <input type="text" name="" id="">
+    <input type="text" class="text-input" name="" id="">
+    <button type="submit">전송</button>
+    <hr>
+    <!-- input 태그 쓸 때 label 태그도 같이 사용해주세요(권장) -->
+    <!-- label 태그 안에 input 태그를 감싸는 방법도 가능합니다! -->
+    <!-- 주의! id 는 무조건 하나의 문서에서 고유해야되고, class 는 중복이 허용됩니다 -->
+    <div>
+      <label for="name">너의 이름은?</label>  
+    </div>
+    <input type="text" class="text-input" name="" id="name">
+  </form>
+  <hr>
+  <h3>Quiz</h3>
+  <div class="form-background">
+    <div class="form-container">
+      <form action="#">
+        <h3>Contact Us</h3>
+        <div class="email-header">
+          <label for="email">Your Email</label>
+        </div>
+        <input class="email-input" type="email" name="" id="email" placeholder="email@example.com">
+        <div class="name-container">
+          <div class="first-name">
+            <div><label for="fst-name">First Name</label></div>
+            <input type="text" name="" id="fst-name">
+          </div>
+          <div class="last-name">
+            <div><label for="lst-name">Last Name</label></div>
+            <input type="text" name="" id="lst-name">
+          </div>
+        </div>
+        <div class="msg-container">
+          <div><label for="msg">Message</label></div>
+          <!-- <input type="text" name="" id="msg"> -->
+          <textarea name="" id="msg"></textarea>
+        </div>
+        <div class="bottom-container">
+          <div class="agree-box">
+            <input type="checkbox" name="" id="agree">
+            <label for="agree">Agree</label>
+          </div>
+          <div class="send-btn">
+            <button type="submit">SEND</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

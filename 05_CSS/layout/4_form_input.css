@@ -1,0 +1,124 @@
+.text-input{
+  width: 120px;
+  padding: 6px 10px;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  /* border 디자인 시 outline 초기화 해주세요 */
+  outline: none;
+  transition: border 0.5s;
+}
+
+.text-input:focus {
+  /* 그냥 색상만 변경해도 됩니다 */
+  /* border-color: #e20e5c; */
+  border: 2px solid #e20e5c;
+}
+/* ---------------------------------------------------------- */
+
+.form-background {
+  background-color: black;
+  height: 1000px;
+  padding-top: 100px;
+}
+
+.form-background input:hover {
+  transition: 0.5s;
+}
+
+.form-background textarea:hover {
+  transition: 0.5s;
+}
+
+.form-background input:hover {
+  border: 2px solid rgb(236, 165, 71);
+}
+
+.form-background textarea:hover {
+  border: 2px solid rgb(236, 165, 71);
+}
+
+.form-container {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.form-container h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form-container .email-input {
+  border: 1px solid rgb(236, 235, 235);
+  outline: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 300px;
+}
+
+.form-container .email-input::placeholder {
+  font-size: 18px;
+}
+
+.form-container .email-input:focus::placeholder {
+  color: transparent;
+}
+
+
+.name-container {
+  margin-top: 20px;
+  display: flex;
+  column-gap: 110px;
+}
+
+.name-container input {
+  border: 1px solid rgb(236, 235, 235);
+  outline: none;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 180px;
+}
+
+.msg-container {
+  margin-top: 20px;
+}
+
+.msg-container textarea {
+  border: 1px solid rgb(236, 235, 235);
+  outline: none;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 90%;
+  height: 100px;
+}
+
+.bottom-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-container button {
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(236, 165, 71);
+  color: white;
+  width: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

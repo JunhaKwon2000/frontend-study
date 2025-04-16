@@ -1,9 +1,19 @@
 /* 기본(공통) 스타일은 앞부분에 작성 */
+/* 영역 확인용으로 배경색 넣어서 잡아주세요! */
+
 ul {
   list-style: none;
 }
 
-a {
+.navbar {
+  display: flex;
+  width: 320px;
+  justify-content: space-between;
+  /* gap 사용으로 간편하게 */
+  /* column-gap: 10px; */
+}
+
+.navbar a {
   display: block;
   width: 70px;
   height: 45px;
@@ -17,12 +27,6 @@ a {
   background-color: #f0ecec;
 }
 
-.navbar {
-  display: flex;
-  width: 320px;
-  justify-content: space-between;
-}
-
 .container {
   width: 800px;
   margin: 0 auto;
@@ -31,8 +35,30 @@ a {
 
 .container .blog-list-item {
   display: flex;
-  justify-content: space-between;
-  margin: 20px;
+}
+
+.container .blog-list-item .blog-content {
+  width: 80%;
+  /* flex: 8; */
+}
+
+.container .blog-list-item + .blog-list-item {
+  margin-top: 100px;
+}
+
+.container .blog-list-item .blog-img {
+  width: 20%;
+  /* flex: 2; */
+}
+
+.container .blog-list-item .blog-img img {
+  /* 이미지는 크기가 있으므로, flex 혹은 width 를 비율로 나누려면 img 에 width, height: 100% 주기!! */
+  /* 이렇게 안하면 overflow 발생(이미지가 부모 영역을 넘어감)!!!(default: visible;) */
+  width: 100%;
+  height: 100%;
+  /* contain: 좁은 쪽에 비율을 유지하면서 맞춤 */
+  /* cover: 넓은 쪽에 비율을 유지하면서 맞춤(이미지가 조금 잘릴수도..?) */
+  object-fit: contain;
 }
 
 .container .content-header {
@@ -44,7 +70,7 @@ a {
 .container .content-header img {
   width: 50px;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 50%;
 }
 
 .container .content-header span {
