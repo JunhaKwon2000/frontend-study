@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    h2 {
+      font-size: 50px;
+      margin-top: 50px;
+      text-align: center;
+      animation: rainbow 2s infinite;
+      position: relative;
+    }
+
+    .fan-1 {
+      width: 40px;
+      display: inline;
+      position: absolute;
+      left: 450px;
+      top: 70px;
+      font-size: 40px;
+      animation: spin 0.7s infinite;
+    }
+
+    .fan-2 {
+      width: 40px;
+      display: inline;
+      position: absolute;
+      left: 640px;
+      top: 70px;
+      font-size: 40px;
+      animation: spin 0.7s infinite;
+    }
+
+    .inner-container {
+      min-width: 405px;
+      width: 30%;
+      height: 500px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      /* border: 2px solid lime; */
+      animation: rainbow-bdc 1s infinite;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      height: 50px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      /* background-color: rgb(98, 240, 98); */
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      animation: rainbow-bc 2s infinite;
+    }
+
+    button:hover {
+      box-shadow: 0 0 10px lightgray;
+    }
+
+    input {
+      padding: 5px;
+      width: 300px;
+      height: 20px;
+      /* border: 2px solid rgb(209, 209, 209); */
+      animation: rainbow-bdc 2s infinite;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    label {
+      font-size: 20px;
+      animation: rainbow 2s infinite;
+    }
+
+    .input-id {
+      min-width: 365px;
+      width: 85%;
+      box-sizing: content-box;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .input-pw {
+      min-width: 365px;
+      width: 85%;
+      box-sizing: content-box;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn-login {
+      min-width: 365px;
+      width: 85%;
+      box-sizing: content-box;
+    }
+
+    .btn-register {
+      min-width: 365px;
+      width: 85%;
+      box-sizing: content-box;
+    }
+
+    .input-pw {
+      position: relative;
+    }
+
+    span {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: lightgray;
+    }
+
+    span:hover {
+      color: black;
+    }
+
+  @keyframes rainbow {
+    0% { color: red; }
+    17% { color: orange; }
+    34% { color: yellow; }
+    51% { color: lime; }
+    68% { color: blue; }
+    85% { color: blueviolet; }
+    100% { color: violet; }
+  }
+
+  @keyframes rainbow-bc {
+    0% { background-color: lime; }
+    17% { background-color: blue; }
+    34% { background-color: blueviolet; }
+    51% { background-color: red; }
+    68% { background-color: orange; }
+    85% { background-color: violet; }
+    100% { background-color: yellow; }
+  }
+
+  @keyframes rainbow-bdc {
+    0% { border: 2px solid blueviolet; }
+    17% { border: 2px solid red; }
+    34% { border: 2px solid yellow; }
+    51% { border: 2px solid orange; }
+    68% { border: 2px solid blue; }
+    85% { border: 2px solid lime; }
+    100% { border: 2px solid violet; }
+  }
+
+  @keyframes spin {
+      0% { transform: rotate(0deg); color: red;}
+      10% { transform: rotate(36deg); color: yellow; }
+      20% { transform: rotate(72deg); color: blueviolet; }
+      30% { transform: rotate(108deg); color: blue; }
+      40% { transform: rotate(144deg); color: orange; }
+      50% { transform: rotate(180deg); color: yellow; }
+      60% { transform: rotate(216deg); color: violet; }
+      70% { transform: rotate(252deg); color: red; }
+      80% { transform: rotate(288deg); color: lime; }
+      90% { transform: rotate(324deg); color: blue; }
+      100% { transform: rotate(360deg); color: blueviolet; }
+  } 
+  </style>
+</head>
+<body>
+  
+  <div class="main-container">
+    <span class="material-symbols-outlined fan-1">toys_fan</span>
+    <span class="material-symbols-outlined fan-2">toys_fan</span>
+    <h2>로그인</h2>
+
+    <div class="inner-container">
+      
+      <div class="input-id">
+        <label for="id">ID : </label>
+        <input type="text" id="id" placeholder="아이디 또는 이메일">
+      </div>
+      <div class="input-pw">
+        <label for="pw">PW : </label>
+        <div>
+          <input type="password" id="pw" placeholder="비밀번호">
+          <span class="material-symbols-outlined">visibility</span>
+        </div>
+      </div>
+      <div class="btn-login">
+        <button type="button">로그인</button>
+      </div>
+      <div class="btn-register">
+        <button type="button">회원가입</button>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+</html>

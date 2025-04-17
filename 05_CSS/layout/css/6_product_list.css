@@ -1,0 +1,160 @@
+/* 단항뱡 애니메이션을 만드는 step 
+  1. 시작 스타일 만들기 (before)
+  2. 최종 스타일 만들기 (after)
+  3. 언제ㅡ 어떻게 했을 때 변하는지 정의(예: 마우스를 올렸을 때) -> CSS 만으로는 hover 가 최대임, js 를 활용하면 클릭, 드래그, 키 입력 시 등 전부 활용 가능
+  4. transition 적용
+*/
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+
+.shop-background {
+  position: relative;
+}
+
+button {
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 120px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  background-color: transparent;
+}
+
+button:hover {
+  background-color: white;
+  /* color: black; */
+  font-size: 25px;
+  animation: rainbow 1.5s infinite;
+}
+
+
+.shop-background {
+  background-color: #eee;
+  padding: 20px;
+}
+
+.shop-container {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.shop-item {
+  width: 33%;
+  margin: 10px;
+  position: relative;
+}
+
+.shop-item img {
+  width: 100%;
+  /* 
+    오버레이랑 이미지랑 높이가 안 맞는 현상 발생
+    이미지는 inline 요소라 글자의 baseline 이 존재(밑으로 눈에 안보이는 공간이 존재)
+  */
+  display: block;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: transparent;
+  position: absolute;
+  
+  /* 
+    팁: 전체 영역 덮어버리기(클릭 못하게 하거나 할 때, 예시로 모달창 백그라운드)
+    div 하나 만들어서 아래 스타일 적용
+   */
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  /* z-index: 999; */
+
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.overlay:hover {
+  background-color: black;
+  opacity: 0.7;
+}
+
+.overlay-btn {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  font-size: 20px;
+}
+
+.overlay-btn:hover {
+  background-color: black;
+  opacity: 0.7;
+}
+
+
+.overlay-up {
+  width: 100%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* 위치 옮기기
+    position, translate 중에서 하나 적용
+  */
+  transition: 0.5s;
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+}
+
+.shop-item:hover .overlay-up {
+  top: 50%;
+  opacity: 0.9;
+  color: white;
+  font-size: 20px;
+}
+
+@keyframes shiver {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-2px, 0px) rotate(1deg); }
+  30% { transform: translate(2px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-2px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  17% { color: orange; }
+  34% { color: yellow; }
+  51% { color: lime; }
+  68% { color: blue; }
+  85% { color: blueviolet; }
+  100% { color: violet; }
+}
