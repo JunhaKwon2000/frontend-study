@@ -1,0 +1,107 @@
+.content-logo {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.content-logo img {
+    width: 90px;
+    height: 30px;
+}
+
+
+.inner-container {
+    width: 560px;
+    height: 550px;
+    margin: 30px auto;
+    padding-top: 50px;
+    border: 1px solid lightgray;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 50px;
+}
+
+.content-idpw {
+    width: 80%;
+    text-align: center;
+}
+
+.content-idpw input {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid rgb(198, 197, 197);
+    font-size: 16px;
+}
+
+.content-idpw input::placeholder {
+    font-size: 16px;
+}
+
+
+
+
+.content-btn {
+    width: 80%;
+    text-align: center;
+}
+
+.content-btn>div {
+    width: 100%;
+}
+
+.content-btn button {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #191919;
+}
+
+.content-btn .btn-login button {
+    background-color: #fee500;
+}
+
+.content-btn .btn-qr button {
+    background-color: #f0f0f0;
+}
+
+.content-btn .btn-border {
+    margin: 10px 0;
+    font-size: 12px;
+}
+
+
+.content-footer {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-footer a {
+    color: #191919;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.content-footer>div:nth-child(2)>a:first-child::after {
+    margin-left: 3px;
+    content: "|";
+}
+
+.content-banner {
+    width: 80%;
+    text-align: center;
+    height: 100px;
+    background-image: url(../layout/images/unify_banner_ko_1.png);
+    background-size: cover;
+}
