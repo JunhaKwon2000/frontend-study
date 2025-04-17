@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform</title>
+  <style>
+    body {
+      padding: 0 40px;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: cornflowerblue;
+    }
+
+    .container-1 .item-1 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+
+      /* transform: 변환함수(); */
+      transition: 1s;
+      /* transform: rotate(45deg); */
+    }
+
+    .container-1 .item-1:hover {
+      transform: rotate(45deg) scale(1.3);
+    }
+
+    .translate {
+      /* transform: translate(20px, 20px); */
+      /* transform: translateX(20px); */
+      transform: translateY(20px);
+    }
+    
+    
+    .scale {
+      width: 250px;
+      margin: 0 auto;
+      transition: 2s;
+    }
+    .scale:hover {
+      transition: 1s;
+      transform: scale(3.0);
+      box-shadow: 20px 10px 10px gray;
+      /* transform: scaleX(1.5); */
+      /* transform: scaleY(1.5); */
+    }
+
+    .rotate {
+      /* 2D */
+      /* transform: rotate(45deg); */
+      /* 3D (perspective 를 제일 앞에 작성하세요) */
+      /* transform: perspective(300px) rotateX(60deg); */
+      /* transform: perspective(300px) rotateY(60deg); */
+      transition: 5s;
+    }
+
+    .rotate:hover {
+      transform: perspective(300px) rotateY(5400deg) rotateX(3600deg) scale(10.0) skewX(200deg);
+      backface-visibility: hidden;
+      box-shadow: 20px 10px 10px gray;
+      background-color: crimson;
+      color: white;
+      font-size: 100px;
+    }
+
+    .skew {
+      /* transform: skewX(200deg); */
+      /* transform: skewY(200deg); */
+      transform: skewY(-200deg);
+    }
+
+    .container-2 {
+      width: 200px;
+      height: 100px;
+      background-color: royalblue;
+    }
+
+    .container-2 .item-2 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      font-size: 30px;
+      /* 글자 속성 */
+      /* text-align: center; */
+      /* line-height: 100px; */
+      /* 플렉스 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* 원근법 추가1: 함수 사용(관찰 대상에 적용해주세요) */
+      transform: perspective(250px) rotateY(45deg);
+    }
+
+    .container-3 {
+      width: 200px;
+      height: 100px;
+      background-color: royalblue;
+      /* 원근법 추가2: 속성 사용(관찰 대상의 부모에게 적용해주세요) */
+      perspective: 250px;
+    }
+
+    .container-3 .item-3 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      font-size: 30px;
+      /* 글자 속성 */
+      /* text-align: center; */
+      /* line-height: 100px; */
+      /* 플렉스 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotateY(45deg);
+    }
+
+    .container-4 {
+      width: 200px;
+      height: 100px;
+      background-color: royalblue;
+      perspective: 250px;
+    }
+
+    .container-4 .item-4 {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      font-size: 30px;
+      /* 글자 속성 */
+      /* text-align: center; */
+      /* line-height: 100px; */
+      /* 플렉스 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 2s;
+      /* 뒷면 숨기기 */
+      backface-visibility: hidden;
+    }
+
+    .container-4 .item-4:hover {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>transform(변환)</h1>
+  <div class="container-1">
+    <div class="item-1">Hello World!</div>
+  </div>
+  <hr>
+
+  <h2>translate</h2>
+  <div class="translate">Hello World!</div>
+  <hr>
+
+  <h2 class="scale-h2">scale</h2>
+  <div class="scale">Hello World!</div>
+  <hr>
+  
+  <h2>rotate</h2>
+  <div class="rotate">Hello World!</div>
+  <hr>
+  
+  <h2>skew</h2>
+  <div class="skew">Hello World!</div>
+
+  <hr>
+  <h2>perspective & backface-visibility</h2>
+  <p>perspective() 함수 사용했을 때</p>
+  <div class="container-2">
+    <div class="item-2">앞면</div>
+  </div>
+  <p>perspective 속성(부모에게 적용해주세요) 사용했을 때(권장)</p>
+  <div class="container-3">
+    <div class="item-3">앞면</div>
+  </div>
+  <p>뒷면 보임 여부</p>
+  <div class="container-4">
+    <div class="item-4">앞면</div>
+  </div>
+</body>
+</html>
+
+<!-- (정리) Quiz
+  Q1: transform 속성의 2D 회전을 지정하는 변환 함수는?
+  A1: rotate(deg) (3D 는 rotateX(), rotateY() 사용)
+
+  Q2: 관찰 대상의 부모 요소에 원근법을 지정하는 속성은?
+  A2: perspective: px;
+
+  Q3: skewX 변환 함수에서 값으로 사용하는 단위는?
+  A3: deg
+
+  Q4: perspective 함수에서 원근 거리가 적용되는 대상은?
+  A4: 자기 자신
+
+  Q5: 요소의 뒷면을 숨기는 속성과 값은?
+  A5: backface-visibility: hidden;
+-->
