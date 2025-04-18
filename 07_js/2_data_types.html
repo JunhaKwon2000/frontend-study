@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // 데이터 타입(자료형)
+
+    // String(문자 데이터)
+    // 선언 방식: "", '', ``
+    const num = 999;
+    const myName = "JUNHA";
+    const email = 'junharoket@naver.com'
+    const hello = `Hello ${num * 100 ** 2} World!`; // 템플릿 리터럴(ES6차)
+    // 옛날 옛적에
+    const concatString = 'Hello '+ myName + '?!'
+
+    console.log(myName);
+    console.log(email);
+    console.log(hello);
+    console.log(concatString);
+    
+    // Number (숫자 데이터)
+    // 정수 및 부동소수점(실수) 숫자를 나타냄
+    const number = 123.123;
+    const opacity = 0.57;
+    console.log(number);
+    console.log(opacity);
+    // console.log(number);
+    
+    // boolean (논리 데이터)
+    // true, false 두 가지 값만 존재 - 이분법적으로 구분해야 하는 상황에서 사용(조건문 / 반복문에서 조건을 판단할 때)
+    const isValid = true;
+    const checked = false;
+    console.log(isValid);
+    console.log(checked);
+    // 조건식
+    const numX = 5;
+    const numY = '5';
+    const numZ = 6;
+    console.log(numX == numY); // true, == 은 값만
+    console.log(numX === numY); // false, === 은 타입 + 값
+
+    // undefined
+    // 아무것도 정의되지 않은(값이 할당되지 않은) 상태를 의미
+    // 변수의 초기화를 하지 않으면 자동으로 undefined 가 할당
+    // 초기화: 변수를 선언하고 처음으로 값을 저장하는 것
+    let undef;
+    console.log(undef);
+    const obj = {
+      abc: 123
+    };
+    console.log(obj.abc);
+    console.log(obj.xyz);
+    
+    // null
+    // undefined 와 다른 점은 개발자가 명시적으로 값이 비어있음을 나타낼 때 사용
+    let name = null;
+    console.log(name);
+    name = 'junha'
+    console.log(name);
+    
+    // Object
+    // 관련있는 여러 데이터를 key-value 1쌍의 형태로 저장
+    // {} 로 생성
+    const user = {
+      // property (속성)
+      name: 'juhna',
+      age: 26,
+      isMarried: 'false'
+    };
+    console.log(user);
+    // 객체 내부의 특정 데이터만 출력
+    console.log(user.name);
+    console.log(user.age);
+    console.log(user.isMarried);
+
+    // array(배열)
+    // 여러 데이터를 순차적으로 저장
+    // [] 로 생성
+    const fruits = ['Apple', 'Bananna', 'Cherry'];
+    console.log(fruits);
+    // 특정 데이터만 접근하려면 index 로 접근
+    console.log(fruits[0]);
+    console.log(fruits[1]);
+    console.log(fruits[2]);
+    // 참고: 배열은 자료형이 다른 데이터를 혼입 가능, 하지만 대부분의 경우 같은 자료형을 사용함
+    // 주로 배열 안에 object 를 사용하는 방식을 사용함
+    const arr1 = ['Apple', 3, true];
+    console.log(arr1);
+
+    // (활용 예) 상품 리스트, 사용자 리스트
+    const productList = [
+      {
+        productId: 1,
+        productName: '고려은단 비타민C',
+        price: 32900,
+        productImg: 'https://이미지경로',
+        brand: '고려은단'
+      }, 
+      {
+        productId: 2,
+        productName: '콘드로이친1200',
+        price: 285000,
+        productImg: 'https://이미지경로',
+        brand: '관절엔'
+      }, 
+      {
+        productId: 3,
+        productName: '에버콜라겐C',
+        price: 210000,
+        productImg: 'https://이미지경로',
+        brand: '뉴트리'
+      }
+    ];
+    console.log(productList[0].productName);
+
+    const userList = [
+      {
+        userId: 'geoblo',
+        name: '김재현',
+        age: 99,
+        email: 'geoblo@naver.com',
+        hobby: ['배드민턴', '싸이클', '스노우보드', '스쿼시', '탁구', '스쿠버 다이빙']
+      },
+      {
+        userId: 'javakim',
+        name: '김자바',
+        age: 10,
+        email: 'jsjs@gmail.com',
+        hobby: ['멍때리기']
+      }
+    ];
+    console.log(userList[0].hobby[2]);
+    
+    // 참고: JS 는 매우 유연한 언어임
+    // 변수에 여러 데이터 타입을 넣을 수 있고, 값을 넣는 순간에 타입이 결정됨 => 동적 타입 언어
+    let e = 1;
+    console.log(e); // 타입 체크: typeof
+    console.log(typeof e);
+    e = 'Junha';
+    console.log(typeof e);
+
+    // 참고: false 로 취급 되는 값들이 있음(falsy)
+    // false, 0, ''(빈문자), null, undefined, NaN(Not a Number)
+  </script>
+</body>
+</html>
