@@ -46,7 +46,6 @@
 
 
 
-
 .content-btn {
     width: 80%;
     text-align: center;
@@ -75,9 +74,31 @@
     background-color: #f0f0f0;
 }
 
-.content-btn .btn-border {
+/* .content-btn .btn-border {
     margin: 10px 0;
     font-size: 12px;
+}
+
+
+.content-btn .btn-border span::after {
+    content: "";
+    height: 1px;
+    width: 190px;
+    background-color: black;
+    display: block;
+}
+
+.content-btn .btn-border span::before {
+    content: "";
+    height: 1px;
+    width: 190px;
+    background-color: black;
+    display: block;
+} */
+
+.content-btn .btn-border {
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -105,3 +126,4 @@
     background-image: url(../layout/images/unify_banner_ko_1.png);
     background-size: cover;
 }
+

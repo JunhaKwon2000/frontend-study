@@ -14,7 +14,8 @@
       font-size: 50px;
       margin-top: 50px;
       text-align: center;
-      animation: rainbow 2s infinite;
+      /* animation: rainbow 2s infinite; */
+      color: lime;
       position: relative;
     }
 
@@ -47,8 +48,8 @@
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      /* border: 2px solid lime; */
-      animation: rainbow-bdc 1s infinite;
+      border: 2px solid lime;
+      /* animation: rainbow-bdc 1s infinite; */
       border-radius: 10px;
     }
 
@@ -59,7 +60,7 @@
       outline: none;
       border: none;
       border-radius: 5px;
-      /* background-color: rgb(98, 240, 98); */
+      background-color: rgb(98, 240, 98);
       color: white;
       font-size: 20px;
       cursor: pointer;
@@ -75,14 +76,14 @@
       width: 300px;
       height: 20px;
       /* border: 2px solid rgb(209, 209, 209); */
-      animation: rainbow-bdc 2s infinite;
+      /* animation: rainbow-bdc 2s infinite; */
       border-radius: 5px;
       outline: none;
     }
 
     label {
       font-size: 20px;
-      animation: rainbow 2s infinite;
+      /* animation: rainbow 2s infinite; */
     }
 
     .input-id {
@@ -128,56 +129,11 @@
       color: black;
     }
 
-  @keyframes rainbow {
-    0% { color: red; }
-    17% { color: orange; }
-    34% { color: yellow; }
-    51% { color: lime; }
-    68% { color: blue; }
-    85% { color: blueviolet; }
-    100% { color: violet; }
-  }
-
-  @keyframes rainbow-bc {
-    0% { background-color: lime; }
-    17% { background-color: blue; }
-    34% { background-color: blueviolet; }
-    51% { background-color: red; }
-    68% { background-color: orange; }
-    85% { background-color: violet; }
-    100% { background-color: yellow; }
-  }
-
-  @keyframes rainbow-bdc {
-    0% { border: 2px solid blueviolet; }
-    17% { border: 2px solid red; }
-    34% { border: 2px solid yellow; }
-    51% { border: 2px solid orange; }
-    68% { border: 2px solid blue; }
-    85% { border: 2px solid lime; }
-    100% { border: 2px solid violet; }
-  }
-
-  @keyframes spin {
-      0% { transform: rotate(0deg); color: red;}
-      10% { transform: rotate(36deg); color: yellow; }
-      20% { transform: rotate(72deg); color: blueviolet; }
-      30% { transform: rotate(108deg); color: blue; }
-      40% { transform: rotate(144deg); color: orange; }
-      50% { transform: rotate(180deg); color: yellow; }
-      60% { transform: rotate(216deg); color: violet; }
-      70% { transform: rotate(252deg); color: red; }
-      80% { transform: rotate(288deg); color: lime; }
-      90% { transform: rotate(324deg); color: blue; }
-      100% { transform: rotate(360deg); color: blueviolet; }
-  } 
   </style>
 </head>
 <body>
   
   <div class="main-container">
-    <span class="material-symbols-outlined fan-1">toys_fan</span>
-    <span class="material-symbols-outlined fan-2">toys_fan</span>
     <h2>로그인</h2>
 
     <div class="inner-container">
