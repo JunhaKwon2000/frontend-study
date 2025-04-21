@@ -60,6 +60,10 @@
       border: 1px solid #c5ccd2;
       position: relative;
     }
+    .login-container .id-box.focused,
+    .login-container .pw-box.focused {
+      border: 2px solid #09aa5c;
+    }
     .login-container .id-box {
       border-radius: 8px 8px 0 0;
     }
@@ -74,7 +78,9 @@
       color: rgba(0, 0, 0, .5);
       transition: .3s;
     }
-    .login-container .form-input:focus + .text-label {
+    .login-container .form-input:focus + .text-label,
+    .login-container .pw-box.on .text-label,
+    .login-container .id-box.on .text-label{
       bottom: 30px;
       font-size: 12px;
     }
@@ -83,6 +89,9 @@
       top: 18px;
       right: 15px;
       cursor: pointer;
+    }
+    .lime {
+      color: #09aa5c;
     }
   </style>
 </head>
@@ -96,12 +105,78 @@
       <div class="pw-box">
         <input type="password" id="pw" class="form-input">
         <label for="pw" class="text-label">비밀번호</label>
-        <span class="material-symbols-outlined icon-eye">visibility</span>
+        <span class="material-symbols-outlined icon-eye">visibility_off</span>
       </div>
 
       <button type="button" class="btn btn-login">로그인</button>
       <button type="button" class="btn btn-join">회원가입</button>
     </div>
   </div>
+
+
+  <script>
+    const inpEls = document.querySelectorAll('input.form-input');
+    inpEls.forEach(inpEl => {
+      const prtEl = inpEl.parentElement;
+      inpEl.addEventListener('focus', () => {
+        prtEl.classList.add('focused');
+      })
+      inpEl.addEventListener('blur', () => {
+        prtEl.classList.remove('focused');
+      })
+    })
+
+    const span = document.querySelector('span');
+    const pwInput = document.getElementById('pw');
+    const idInput = document.getElementById('id');
+    span.addEventListener('click', () => {
+        if (pwInput.getAttribute('type') === 'password') {
+          pwInput.setAttribute('type', 'text');
+          span.classList.add('lime');
+          span.textContent = 'visibility';
+        }
+        else {
+          pwInput.setAttribute('type', 'password');
+          span.classList.remove('lime');
+          span.textContent = 'visibility_off';
+        }
+      })
+      
+    // 비밀번호 input 에 실험해보기 
+    // 입력창에서 클릭이 떨어졌을 때
+    // pwInput.addEventListener('blur', () => {
+    //   console.log('blur event 발생');
+    // })
+    
+    // 입력 끝!
+    pwInput.addEventListener('change', () => {
+      if (pwInput.value) {
+        pwInput.parentElement.classList.add('on');
+      }
+      else {
+        pwInput.parentElement.classList.remove('on');
+      }
+    })
+
+    idInput.addEventListener('change', () => {
+      if (idInput.value) {
+        idInput.parentElement.classList.add('on');
+      }
+      else {
+        idInput.parentElement.classList.remove('on');
+      }
+    })
+
+    // // 뭘 하나 입력할 때마다
+    // pwInput.addEventListener('input', () => {
+    //   console.log('input event 발생');
+    // })
+
+    const naverImg = document.createElement('img');
+    naverImg.setAttribute('src', 'https://images.unsplash.com/photo-1743976955438-8f4743e06f8d?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    idInput.addEventListener('click', () => {
+      document.appendChild();
+    })
+  </script>
 </body>
 </html>
