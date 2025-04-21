@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Noto Sans Kr", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden; /* 가로 scroll 방지 */
+}
+
+.font-en {
+  font-family: "Open Sans", sans-serif;
+}
+
+.font-robot {
+  font-family: "Roboto Mono", monospace;
+}
+
+.font-kr {
+  font-family: "Noto Sans Kr", sans-serif;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.animate-blinks {
+  animation: blinks;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+} 
+
+/* ------------------HEADER------------------ */
+header .inner {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .inner a .my-name {
+  display: flex;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+header .inner a .my-name .name {
+  color: #66d9ed;
+  padding-right: 5px;
+}
+
+header .inner a .my-name .expander {
+  display: none;
+  color: #6de58b;
+}
+
+header .inner a .my-name:hover .expander {
+  display: block;
+}
+
+header .inner a .my-name .hi-color {
+  color: purple;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  margin: 10px 20px;
+}
+
+header nav ul li:hover {
+  color: #66d9ed;
+}
+
+/* ------------------VISUAL------------------ */
+.visual {
+  background-image: url('../images/bcimg.jpg');
+  background-size: cover;
+}
+
+.visual > .inner {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 60px);
+}
+
+.visual > .inner .intro {
+  color: #fff;
+  font-size: 100px;
+  font-weight: 400;
+}
