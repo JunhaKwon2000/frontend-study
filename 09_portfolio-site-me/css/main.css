@@ -41,6 +41,50 @@ body {
   font-weight: 400;
 }
 
+/* 헤더 공통 스타일 */
+.content-header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  padding-top: 120px;
+}
+
+.content-header p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.content-header hr {
+  margin: 0 auto;
+  width: 200px;
+  height: 3px;
+  background-color: #7843E9;
+  text-align: center;
+}
+
+/* 버튼 공통 스타일 */
+.btn-git {
+  display: block;
+  text-align: right;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 110px;
+  padding: 8px 10px 8px 20px;
+}
+
+.btn-README {
+  display: block;
+  text-align: center;
+  background-color: #7843E9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 110px;
+  padding: 8px 20px;
+}
+
 /* ------------------HEADER------------------ */
 header {
   position: fixed;
@@ -90,6 +134,39 @@ header nav ul li:hover {
   color: #7843E9;
 }
 
+/* ------------------SIDEBAR------------------ */
+.side-bar {
+  position: fixed;
+  top: 42vh;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+}
+
+.side-bar li {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .side-bar li:last-child {
+  border-bottom: 2px solid #000;
+} */
+
+.side-bar li:hover {
+  background-color: rgba(120, 87, 233, 0.2);
+}
+
+.side-bar img {
+  /* display: block; 이거 안하면 baseline 때메 이미지가 중앙으로 안감 */
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+
 /* ------------------VISUAL------------------ */
 .visual {
   margin-top: 60px;
@@ -97,9 +174,12 @@ header nav ul li:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('../images/simple.jpg');
+  /* background-image: url('../images/simple.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
 
 .visual > .inner {
@@ -115,44 +195,29 @@ header nav ul li:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #333;
+  color: #fff;
 }
 
 .visual > .inner h1 {
-  font-size: 50px;
+  font-size: 70px;
   font-weight: 400;
+}
+
+.visual > .inner p {
+  font-size: 20px;
 }
 
 .visual > .inner div:nth-child(2) a {
   background-color: #7843E9;
   border: none;
   border-radius: 5px;
-  padding: 10px 50px;
-  color: white;
+  padding: 20px 70px;
+  color: #fff;
+  font-size: 30px;
   text-align: center;
 }
 
 /* ------------------ABOUT ME------------------ */
-.about-me-header {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 500;
-  margin-top: 80px;
-}
-
-.about-me-header p {
-  margin-top: 20px;
-  font-size: 16px;
-}
-
-.about-me-header hr {
-  margin: 0 auto;
-  width: 200px;
-  height: 3px;
-  background-color: #7843E9;
-  text-align: center;
-}
-
 .about-me-body {
   text-align: center;
   font-size: 30px;
@@ -162,7 +227,7 @@ header nav ul li:hover {
   justify-content: center;
   column-gap: 50px;
   /* test */
-  margin-bottom: 2000px;
+  margin-bottom: 70px
 }
 
 .about-me-body h2 {
@@ -173,20 +238,163 @@ header nav ul li:hover {
   text-align: left;
   margin-top: 20px;
   font-size: 16px;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .about-me-body .skill-stack-1 {
   margin-top: 20px;
 }
 
-.about-me-body .skill-stack-1,
-.about-me-body .skill-stack-2 {
-  text-align: left;
-}
-
-.about-me-body .skill-stack-1 img,
-.about-me-body .skill-stack-2 img{
+.about-me-body .skill-stack-1 > div,
+.about-me-body .skill-stack-2 > div,
+.about-me-body .skill-stack-3 > div,
+.about-me-body .skill-stack-4 > div {
+  position: relative;
   width: 50px;
   height: 50px;
+  margin: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-me-body .skill-stack-1 > div > div,
+.about-me-body .skill-stack-2 > div > div,
+.about-me-body .skill-stack-3 > div > div,
+.about-me-body .skill-stack-4 > div > div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+
+.about-me-body .skill-stack-1,
+.about-me-body .skill-stack-2,
+.about-me-body .skill-stack-3 {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me-body .skill-stack-4 {
+  display: flex;
+}
+
+
+.about-me-body .skill-stack-1 img,
+.about-me-body .skill-stack-2 img,
+.about-me-body .skill-stack-3 img,
+.about-me-body .skill-stack-4 img{
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+.about-me-body .skill-stack-1 > div {
+  position: relative;
+}
+
+.about-me-body .skill-stack-1 > div .overlay,
+.about-me-body .skill-stack-2 > div .overlay,
+.about-me-body .skill-stack-3 > div .overlay,
+.about-me-body .skill-stack-4 > div .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.3s;
+  color: white;
+  border: none;
+  border-radius: 11px;
+}
+
+.about-me-body .skill-stack-1 > div .overlay p,
+.about-me-body .skill-stack-2 > div .overlay p,
+.about-me-body .skill-stack-3 > div .overlay p,
+.about-me-body .skill-stack-4 > div .overlay p {
+  font-size: 10px;
+  line-height: 50px;
+}
+
+.about-me-body .skill-stack-1 div:hover img,
+.about-me-body .skill-stack-2 div:hover img,
+.about-me-body .skill-stack-3 div:hover img,
+.about-me-body .skill-stack-4 div:hover img{
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.about-me-body .skill-stack-1 div:hover .overlay,
+.about-me-body .skill-stack-2 div:hover .overlay,
+.about-me-body .skill-stack-3 div:hover .overlay,
+.about-me-body .skill-stack-4 div:hover .overlay{
+  transform: scale(1.5);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* ------------------PROJECT------------------ */
+.project-body {
+  display: flex;
+  column-gap: 80px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.project-body img {
+  margin-left: 50px;
+}
+
+.project-body .project-wrapper {
+  padding-top: 40px;
+}
+
+.project-body .project-text h1 {
+  font-size: 30px;
+}
+
+.project-body .project-text p {
+  margin-top: 30px;
+  font-weight: 300;
+}
+
+.project-body .project-wrapper > div:nth-child(2) {
+  position: relative;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.project-body .project-wrapper > div:nth-child(2) a:nth-child(1) {
+  background-image: url('../images/git_icon.svg');
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-size: 38px 38px;
+}
+
+
+
+
+
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
