@@ -41,6 +41,12 @@ body {
   font-weight: 400;
 }
 
+.purple-text-header {
+  color: transparent;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
 /* 헤더 공통 스타일 */
 .content-header {
   text-align: center;
@@ -101,6 +107,7 @@ header .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 header .inner a .my-name {
@@ -115,11 +122,17 @@ header .inner a .my-name .name {
 
 header .inner a .my-name .expander {
   display: none;
-  color: #7843E9;
+  top: 14px;
+  left: -58px;
 }
 
 header .inner a .my-name:hover .expander {
+  color: #7843E9;
   display: block;
+}
+
+header .inner a .my-name:hover .purple-text-header {
+  color: #7843E9;
 }
 
 header nav ul {
@@ -150,10 +163,6 @@ header nav ul li:hover {
   justify-content: center;
   align-items: center;
 }
-
-/* .side-bar li:last-child {
-  border-bottom: 2px solid #000;
-} */
 
 .side-bar li:hover {
   background-color: rgba(120, 87, 233, 0.2);
@@ -187,7 +196,8 @@ header nav ul li:hover {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  row-gap: 100px;
+  row-gap: 80px;
+  margin-top: 90px;
 }
 
 .visual > .inner div:nth-child(1) {
@@ -199,12 +209,12 @@ header nav ul li:hover {
 }
 
 .visual > .inner h1 {
-  font-size: 70px;
+  font-size: 100px;
   font-weight: 400;
 }
 
 .visual > .inner p {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .visual > .inner div:nth-child(2) a {
@@ -215,6 +225,30 @@ header nav ul li:hover {
   color: #fff;
   font-size: 30px;
   text-align: center;
+}
+
+.visual-mouse {
+  width: 30px;
+  height: 50px;
+  margin: 50px auto 0px;
+  z-index: 999;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  position: relative;
+}
+
+.visual-mouse::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  animation: mouseWheel 1s infinite;
 }
 
 /* ------------------ABOUT ME------------------ */
@@ -382,6 +416,14 @@ header nav ul li:hover {
   background-size: 38px 38px;
 }
 
+.project-body .project-wrapper > div:nth-child(2) a {
+  transition: 0.3s;
+}
+
+.project-body .project-wrapper > div:nth-child(2) a:hover {
+  transform: scale(1.2);
+}
+
 
 
 
@@ -396,5 +438,52 @@ header nav ul li:hover {
   }
   100% {
       background-position: 0% 50%;
+  }
+}
+
+@keyframes mouseWheel {
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  10% {
+    top: 10px;
+    opacity: 0.9;
+  }
+  20% {
+    top: 12px;
+    opacity: 0.8;
+  }
+  30% {
+    top: 14px;
+    opacity: 0.7;
+  }
+  40% {
+    top: 16px;
+    opacity: 0.6;
+  }
+  50% {
+    top: 18px;
+    opacity: 0.5;
+  }
+  60% {
+    top: 20px;
+    opacity: 0.4;
+  }
+  70% {
+    top: 22px;
+    opacity: 0.3;
+  }
+  80% {
+    top: 24px;
+    opacity: 0.2;
+  }
+  90% {
+    top: 26px;
+    opacity: 0.1;
+  }
+  100% {
+    top: 28px;
+    opacity: 0;
   }
 }
