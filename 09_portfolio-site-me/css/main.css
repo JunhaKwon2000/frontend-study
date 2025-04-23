@@ -247,7 +247,7 @@ header nav ul li:hover {
   border-radius: 50%;
   position: absolute;
   top: 8px;
-  left: 10px;
+  left: 9px;
   animation: mouseWheel 1s infinite;
 }
 
@@ -424,11 +424,137 @@ header nav ul li:hover {
   transform: scale(1.2);
 }
 
+/* ------------------CONTACT------------------ */
+.contact .contact-body {
+  display: flex;
+  justify-content: center;
+  column-gap: 150px;
+  margin: 50px 0;
+}
+
+.contact .contact-body .contact-body-img {
+  width: 300px;
+  height: 400px;
+  background-image: url('../images/me.jpg');
+  background-size: contain;
+}
+
+.contact .contact-body .contact-body-text {
+  text-align: center;
+}
+
+.contact .contact-body .contact-body-text h2:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 70px;
+}
+
+.contact .contact-body .contact-body-text h2 {
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.contact .contact-body .contact-body-text a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.contact .contact-body .contact-body-text a:hover {
+  color: rgba(120, 87, 233, 0.8);
+}
+
+/* ------------------MODAL------------------ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modal-content {
+  width: 60%;
+  height: 70%;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal .modal-header {
+  background-color: #7843E9;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 15px 15px 0 0;
+}
+
+.modal .modal-header span {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal .modal-header span:hover {
+  transform: scale(1.4);
+}
+
+.modal .modal-content .modal-body p {
+  margin: 10px 20px;
+}
 
 
 
 
+.clipboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
 
+.clipboard .clipboard-body {
+  width: 230px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 15px;
+}
+
+.clipboard .clipboard-body a {
+  border-radius: 5px;
+  text-align: center;
+  width: 30%;
+  background-color: #7843E9;
+  color: #fff;
+}
+
+.clipboard .clipboard-body a:hover {
+  background-color: rgba(120, 87, 233, 0.9);
+}
+
+
+/* ------------------ANIMATIONS------------------ */
 @keyframes gradient {
   0% {
       background-position: 0% 50%;

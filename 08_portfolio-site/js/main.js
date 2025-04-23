@@ -34,3 +34,89 @@ const swiper = new Swiper('.project .swiper', {
     prevEl: '.project .swiper-button-prev',
   },
 });
+
+// 모달창 띄우기
+const modalBtn = document.querySelector('.project .btn-modal');
+const modalEl = document.querySelector('#modal');
+const modalContentEl = document.querySelector('#modal .modal-content');
+const closeEl = document.querySelector('.btn-close');
+
+modalBtn.addEventListener('click', () => {
+  modalEl.style.display = 'flex';
+  modalContentEl.style.zIndex = 9999;
+})
+
+closeEl.addEventListener('click', () => {
+  modalEl.style.display = 'none';
+})
+
+modalEl.addEventListener('click', () => {
+  modalEl.style.display = 'none';
+})
+
+
+
+
+
+const imageModalBtn = document.querySelectorAll('.project .btn-modal-image');
+const imageModalEl = document.querySelector('#image-modal');
+const closeImageEl = document.querySelector('#image-modal .btn-close');
+const modalImage = document.querySelector('#image-modal img');
+
+imageModalBtn.forEach((imgModalBtns, idx) => {
+  imgModalBtns.addEventListener('click', () => {
+    imageModalEl.style.display = 'flex';
+    let activeImage = document.querySelector(`.project .inner div:nth-of-type(${idx+1}) .swiper-slide-active img`);
+    modalImage.setAttribute('src', activeImage.getAttribute('src'));
+  })
+})
+
+closeImageEl.addEventListener('click', () => {
+  imageModalEl.style.display = 'none';
+})
+
+
+// imgModalBtns.dataset.imageSrc
+
+// 추가로 더 해볼 만한 것!
+// 모달 바깥 영역 클릭 시 닫기
+// ESC 키로 닫기 - keydown, keypress 이벤트 사용해야댐
+// fade 애니메이션 넣기
+
+// -------------------------------------------------- ESC
+document.onkeydown = function (evt) {
+  if (evt.key === 'Escape') {
+      modalEl.style.display = 'none';
+      imageModalEl.style.display = 'none';
+  }
+};
+// --------------------------------------------------
+
+
+// 현재 year 표시
+// 날짜 정보를 가진 JS의 Date 객체를 활용
+// console.log(new Date());
+const nowYear = new Date();
+// console.log(nowYear.getFullYear());
+const copyrightEl = document.querySelector('.this-year');
+copyrightEl.textContent = nowYear.getFullYear();
+// copyrightEl.innerText = nowYear.getFullYear();
+
+
+// 페이지 최산단으로 이동
+const up = document.querySelector('#to-top');
+
+// 페이지에 스크롤 이벤트 감지를 추가!
+// window: 브라우저 창 객체
+window.addEventListener('scroll', () => {
+  // console.log(window.scrollY);
+  // 페이지 스크롤 위치가 500px 을 넘으면 요소를 보이고, 500px을 넘지 않으면 요소 숨기기!
+  if (window.scrollY > 500) {
+    up.style.opacity = '1';
+    up.style.transform = 'translateX(0)';
+  }
+  else {
+    up.style.opacity = '0';
+    up.style.transform = 'translateX(100px)';
+  }
+})
