@@ -1,3 +1,4 @@
+// HEADER BUTTON
 const projectDiv = document.querySelector('.visual > .inner div:nth-child(2)');
 const projectDivButton = document.querySelector('.visual > .inner div:nth-child(2) a');
 projectDivButton.addEventListener('mouseover', () => {
@@ -31,6 +32,7 @@ readmeClose2.addEventListener('click', () => {
   readmePopUp2.style.display = 'none';
 })
 
+// COMMON CLIPBOARD
 const clipBoardBtn = document.querySelectorAll('.clipboard-link');
 const clipBoardPopUp = document.querySelector('.clipboard');
 const clipBoardClose = document.querySelector('.clipboard .clipboard-body a');
@@ -44,7 +46,6 @@ clipBoardClose.addEventListener('click', () => {
   clipBoardPopUp.style.display = 'none';
 })
 
-
 // COMMON WINDOW ESCAPE KEY
 document.onkeydown = (event) => {
   if (event.key === 'Escape') {
@@ -53,3 +54,85 @@ document.onkeydown = (event) => {
     clipBoardPopUp.style.display = 'none';
   }
 }
+
+// SCROLL
+const spyEl = document.querySelector('.about-me-body.scroll-spy');
+const controllerAboutMe = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+  triggerElement: spyEl, 
+  triggerHook: 0.8,
+}).setClassToggle(spyEl, 'show').addTo(controllerAboutMe);
+
+const projectSpy1 = document.querySelector('.body-spy1');
+const controllerProject1 = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+  triggerElement: projectSpy1, 
+  triggerHook: 0.8,
+}).setClassToggle(projectSpy1, 'show').addTo(controllerProject1);
+
+const projectSpy2 = document.querySelector('.body-spy2');
+const controllerProject2 = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+  triggerElement: projectSpy2, 
+  triggerHook: 0.8,
+}).setClassToggle(projectSpy2, 'show').addTo(controllerProject2);
+
+const contactSpy1 = document.querySelector('.contact-spy1');
+const controllerContact1 = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+  triggerElement: contactSpy1, 
+  triggerHook: 0.99,
+}).setClassToggle(contactSpy1, 'show').addTo(controllerProject1);
+
+const contactSpy2 = document.querySelectorAll('.contact-spy2');
+const controllerContact2 = new ScrollMagic.Controller();
+contactSpy2.forEach((el) => {
+  new ScrollMagic.Scene({
+    triggerElement: el, 
+    triggerHook: 0.99,
+  }).setClassToggle(el, 'show').addTo(controllerProject2);
+})
+
+// COPYRIGHT DATE
+const yearNow = new Date();
+const copyrightYear = document.querySelector('.footer-copyrights span');
+copyrightYear.textContent = yearNow.getFullYear();
+
+// COPY TO CLIPBOARD
+// https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/
+const copyMail = document.querySelector('.clipboard-email').textContent;
+  const copyContent1 = async () => {
+    try {
+      await navigator.clipboard.writeText(copyMail);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
+  const copyPhone = document.querySelector('.clipboard-phone').textContent;
+  const copyContent2 = async () => {
+    try {
+      await navigator.clipboard.writeText(copyPhone);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
+const textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });

@@ -175,7 +175,6 @@ header nav ul li:hover {
   height: 35px;
 }
 
-
 /* ------------------VISUAL------------------ */
 .visual {
   margin-top: 60px;
@@ -247,7 +246,7 @@ header nav ul li:hover {
   border-radius: 50%;
   position: absolute;
   top: 8px;
-  left: 9px;
+  left: 10px;
   animation: mouseWheel 1s infinite;
 }
 
@@ -261,7 +260,7 @@ header nav ul li:hover {
   justify-content: center;
   column-gap: 50px;
   /* test */
-  margin-bottom: 70px
+  margin-bottom: 70px;
 }
 
 .about-me-body h2 {
@@ -273,6 +272,27 @@ header nav ul li:hover {
   margin-top: 20px;
   font-size: 16px;
   font-weight: 300;
+}
+
+.about-me-body > div:nth-of-type(1) {
+  transform: translateX(-250px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.about-me-body.show > div:nth-of-type(1) {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.about-me-body > div:nth-of-type(2) {
+  transform: translateX(250px);
+  opacity: 0;
+  transition: 1s;
+}
+.about-me-body.show > div:nth-of-type(2) {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .about-me-body .skill-stack-1 {
@@ -424,6 +444,28 @@ header nav ul li:hover {
   transform: scale(1.2);
 }
 
+.project-body.body-spy1 {
+  transform: translateX(200px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.project-body.body-spy1.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.project-body.body-spy2 {
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.project-body.body-spy2.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 /* ------------------CONTACT------------------ */
 .contact .contact-body {
   display: flex;
@@ -435,7 +477,7 @@ header nav ul li:hover {
 .contact .contact-body .contact-body-img {
   width: 300px;
   height: 400px;
-  background-image: url('../images/me.jpg');
+  background-image: url('../images/meme.jpg');
   background-size: contain;
 }
 
@@ -460,11 +502,74 @@ header nav ul li:hover {
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  transition: 0.3s;
 }
 
 .contact .contact-body .contact-body-text a:hover {
-  color: rgba(120, 87, 233, 0.8);
+  color: #7843E9;
+}
+
+.contact .contact-body .contact-spy1 {
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.contact .contact-body .contact-spy1.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.contact .contact-body .contact-spy2 {
+  transform: translateX(200px);
+  opacity: 0;
+  transition: transform 1s;
+}
+
+.contact .contact-body .contact-spy2.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ------------------FOOTER------------------ */
+footer {
+  background-color: #000;
+}
+
+footer .inner {
+  padding: 20px 0;
+  color: #fff;
+}
+
+footer .footer-bio {
+  margin: 20px 0;
+}
+
+footer .footer-bio h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+footer .footer-bio p {
+  font-size: 14px;
+}
+
+footer .footer-copyrights {
+  border-top: 1px solid rgb(68, 68, 68);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-copyrights p {
+  font-size: 11px;
+  margin-top: 15px;
+}
+
+footer .footer-copyrights a {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* ------------------MODAL------------------ */
@@ -513,9 +618,6 @@ header nav ul li:hover {
   margin: 10px 20px;
 }
 
-
-
-
 .clipboard {
   position: fixed;
   top: 0;
@@ -552,7 +654,6 @@ header nav ul li:hover {
 .clipboard .clipboard-body a:hover {
   background-color: rgba(120, 87, 233, 0.9);
 }
-
 
 /* ------------------ANIMATIONS------------------ */
 @keyframes gradient {
