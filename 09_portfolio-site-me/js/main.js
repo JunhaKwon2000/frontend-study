@@ -99,7 +99,6 @@ const copyrightYear = document.querySelector('.footer-copyrights span');
 copyrightYear.textContent = yearNow.getFullYear();
 
 // COPY TO CLIPBOARD
-// https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/
 const copyMail = document.querySelector('.clipboard-email').textContent;
   const copyContent1 = async () => {
     try {
@@ -120,6 +119,8 @@ const copyMail = document.querySelector('.clipboard-email').textContent;
     }
   }
 
+
+// TEXT DESIGN 
 const textWrapper = document.querySelector('.ml3');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 anime.timeline({loop: true})
@@ -136,3 +137,16 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
   });
+
+// RESPONSIVE MENU
+const responsiveMenu = document.querySelector('.btn-menu');
+const responsiveMenuExpander = document.querySelector('header nav');
+responsiveMenu.addEventListener('click', () => {
+  responsiveMenuExpander.classList.toggle('active');
+})
+
+const responsiveMenuAnchors = document.querySelectorAll('header nav ul li a');
+responsiveMenuAnchors.forEach(anchors => {
+anchors.addEventListener('click', () => {
+  responsiveMenuExpander.classList.toggle('active');
+})})   

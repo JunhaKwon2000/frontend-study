@@ -147,6 +147,15 @@ header nav ul li:hover {
   color: #7843E9;
 }
 
+header .btn-menu {
+  display: none;
+}
+
+header .btn-menu .material-symbols-outlined {
+  font-size: 25px;
+  display: block;
+}
+
 /* ------------------SIDEBAR------------------ */
 .side-bar {
   position: fixed;
@@ -246,7 +255,7 @@ header nav ul li:hover {
   border-radius: 50%;
   position: absolute;
   top: 8px;
-  left: 10px;
+  left: 9px;
   animation: mouseWheel 1s infinite;
 }
 
@@ -479,6 +488,7 @@ header nav ul li:hover {
   height: 400px;
   background-image: url('../images/meme.jpg');
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .contact .contact-body .contact-body-text {
@@ -653,6 +663,175 @@ footer .footer-copyrights a {
 
 .clipboard .clipboard-body a:hover {
   background-color: rgba(120, 87, 233, 0.9);
+}
+
+/* ------------------RESPONSIVE------------------ */
+
+
+@media screen and (max-width: 767px) {
+  /* COMMON */
+  .inner {
+    max-width: 80%;
+  }
+
+  .content-header p {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  /* -----HEADER----- */
+  header .btn-menu {
+    display: block;
+  }
+
+  header .inner a .my-name {
+    font-size: 15px;
+  }
+
+  header .my-name:hover {
+    color: #7843E9;
+  }
+
+  header .inner a .my-name:hover .expander {
+    display: none;
+  }
+
+  header nav {
+    background-color: #7843E9;
+    color: #fff;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    transition: 0.3s;
+    overflow: hidden;
+  }
+
+  header nav.active {
+    height: 100%;
+  }
+
+  header nav ul {
+    display: block;
+    padding-top: 60px;
+  }
+
+  header nav ul li {
+    padding: 10px 80px;
+    font-size: 30px;
+  }
+
+  header nav ul li:hover {
+    background-color: #fff;
+    cursor: pointer;
+    color: #7843E9;
+  }
+
+  /* SIDEBAR */
+  .side-bar {
+    display: none;
+  }
+
+  /* VISUAL */
+  .visual > .inner {
+    margin-top: 0px;
+  }
+
+  .visual > .inner h1 {
+    font-size: 50px;
+    font-weight: 400;
+  }
+
+  .visual > .inner p {
+    font-size: 15px;
+  }
+
+  .visual > .inner div:nth-child(2) a {
+    background-color: #7843E9;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+  .visual .visual-mouse {
+    display: none;
+  }
+
+  /* ABOUT ME */
+  .about-me-body {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  .about-me-body h2 {
+    font-size: 25px;
+    text-align: center;
+  } 
+  
+  .about-me-body p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .about-me-body .skill-stack-1,
+  .about-me-body .skill-stack-2,
+  .about-me-body .skill-stack-3,
+  .about-me-body .skill-stack-4 {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* PROJECT */
+  .project-body {
+    flex-direction: column;
+  }
+
+  .project-body img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .project-body .project-wrapper {
+    text-align: center;
+  }
+
+  .project-body {
+    display: flex;
+    column-gap: 80px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .project-body .project-wrapper > div:nth-child(2) {
+    justify-content: center;
+  }
+
+  /* CONTACT */
+  .contact .contact-body {
+    flex-direction: column;
+  }
+
+  .contact .contact-body .contact-body-img {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER */
+  footer .footer-bio p {
+    font-size: 12px;
+  }
+
+  /* MODAL */
+  .modal .modal-content {
+    width: 80%;
+  }
 }
 
 /* ------------------ANIMATIONS------------------ */

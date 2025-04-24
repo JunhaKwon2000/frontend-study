@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../junha/frontend-study-goni"
+		}
+	],
+	"settings": {
+		"github.copilot.enable": {
+			"*": false,
+			"plaintext": false,
+			"markdown": false,
+			"scminput": false
+		},
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "frontend-study"
+	}
+}
