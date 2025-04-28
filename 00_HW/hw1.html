@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW1</title>
+</head>
+<body>
+  <h2>자라나라 오버워치</h2>
+  <div>
+    <button>+</button>
+  </div>
+  <img src="../06_overwatch/images/hero1.png" alt="히어로" id="image">
+
+  <hr>
+
+  <h2>이미지 크기 조정</h2>
+  <div>
+    <label for="w">가로:</label>
+    <input type="number" id="w">
+  </div>
+  <div>
+    <label for="h">세로:</label>
+    <input type="number" id="h">
+    <button class="btn2">변경</button>
+  </div>
+  <div>
+    <img src="../06_overwatch/images/hero12.png" alt="히어로" id="image2">
+  </div>
+
+
+
+
+  <script>
+    const btn = document.querySelector('button');
+    const heroImg = document.getElementById('image');
+    
+    btn.addEventListener('click', () => {
+      heroImg.width += 100;
+      heroImg.hegiht += 100;
+    })
+
+
+
+    const btn2 = document.querySelector('.btn2');
+    const heroImg2 = document.getElementById('image2');
+    const inpW = document.getElementById('w');
+    const inpH = document.getElementById('h');
+    btn2.addEventListener('click', () => {
+      heroImg2.width = inpW.value;
+      heroImg2.height = inpH.value;
+
+      inpW.value = '';
+      inpH.value = '';
+    })
+  </script>
+</body>
+</html>

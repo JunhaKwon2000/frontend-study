@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW2</title>
+</head>
+<body>
+  <h2>홀수? 짝수?</h2>
+  <div>
+    <button class="q1add">구슬 추가</button>
+    <button class="q1oddeven">홀짝</button>
+    <button class="q1reset">초기화</button>
+  </div>
+  <div class="parent">
+
+  </div>
+  <span class="q1span"></span>
+  <hr>
+
+  <h2>계산기</h2>
+  <div>
+    <label for="x1">첫번째 값 :</label>
+    <input type="number" id="x1">
+  </div>
+  <div>
+    <label for="x2">두번째 값 :</label>
+    <input type="number" id="x2">
+  </div>
+  <div>
+    <button class="q2plus">+</button>
+    <button class="q2minus">-</button>
+    <button class="q2cross">X</button>
+    <button class="q2div">/</button>
+    <button class="q2rem">%</button>
+  </div>
+  <div>게산결과 : <span class="res"></span></div>
+
+  <hr>
+
+  <hr>
+  <h2>문자 누적하기</h2>
+  <div>
+    <input type="text" id="q4inp">
+    <button class="q4btn">누적</button>
+  </div>
+  <textarea id="q4txt"></textarea>
+
+
+
+
+
+  <script>
+  // Q1 
+  const q1add = document.querySelector('.q1add');
+  const q1parent = document.querySelector('.parent');
+  const q1reset = document.querySelector('.q1reset');
+  const q1oddeven = document.querySelector('.q1oddeven');
+  const q1span = document.querySelector('.q1span');
+  q1add.addEventListener('click', () => {
+    const img = document.createElement('img');
+    img.setAttribute('src', './asd.png');
+    q1parent.appendChild(img);
+  })
+
+  q1oddeven.addEventListener('click', () => {
+    const imgs = document.querySelectorAll('.parent img');
+    console.log(imgs);
+    const cnt = imgs.length;
+    if (cnt % 2 === 0) {
+      q1span.textContent = '짝';
+      window.alert('짝');
+    }
+    else {
+      q1span.textContent = '홀';
+      window.alert('홀');
+    }
+  })
+
+  q1reset.addEventListener('click', () => {
+    q1parent.innerHTML = '';
+    q1span.textContent = '';
+  })
+
+
+
+  // Q2
+  const plus = document.querySelector('.q2plus');
+  const minus = document.querySelector('.q2minus');
+  const cross = document.querySelector('.q2cross');
+  const divide = document.querySelector('.q2div');
+  const rem = document.querySelector('.q2rem');
+  let x1 = document.getElementById('x1');
+  let x2 = document.getElementById('x2');
+  const result = document.querySelector('.res');
+  plus.addEventListener('click', () => {
+    result.textContent = `${parseInt(x1.value) + parseInt(x2.value)}`;
+  })
+  minus.addEventListener('click', () => {
+    result.textContent = `${parseInt(x1.value) - parseInt(x2.value)}`;
+  })
+  cross.addEventListener('click', () => {
+    result.textContent = `${parseInt(x1.value) * parseInt(x2.value)}`;
+  })
+  divide.addEventListener('click', () => {
+    result.textContent = `${parseInt(x1.value) / parseInt(x2.value)}`;
+  })
+  rem.addEventListener('click', () => {
+    result.textContent = `${parseInt(x1.value) % parseInt(x2.value)}`;
+  })
+
+
+
+
+
+  // Q4
+  const q4inp = document.getElementById('q4inp');
+  const q4btn = document.querySelector('.q4btn');
+  const q4txt = document.getElementById('q4txt');
+  q4btn.addEventListener('click', () => {
+    const texT = q4inp.value;
+    const currentText = q4txt.textContent;
+    q4txt.textContent = `${currentText + texT}`;
+    q4inp.value = '';
+  })
+
+  </script>
+</body>
+</html>
