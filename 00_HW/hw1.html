@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HW1</title>
+  <style>
+  </style>
 </head>
 <body>
   <h2>자라나라 오버워치</h2>
   <div>
     <button>+</button>
   </div>
-  <img src="../06_overwatch/images/hero1.png" alt="히어로" id="image">
+  <img src="../06_overwatch/images/hero1.png" alt="히어로" id="image" class="logo">
 
   <hr>
 
@@ -34,12 +36,12 @@
   <script>
     const btn = document.querySelector('button');
     const heroImg = document.getElementById('image');
-    
     btn.addEventListener('click', () => {
-      heroImg.width += 100;
-      heroImg.hegiht += 100;
+      const imgWidth = heroImg.width;
+      const imgHeight = heroImg.height;
+      heroImg.style.width = `${imgWidth + 100}px`;
+      heroImg.style.height = `${imgHeight + 100}px`;
     })
-
 
 
     const btn2 = document.querySelector('.btn2');

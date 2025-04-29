@@ -26,9 +26,11 @@
     
     // 3번 풀이
     const avgSales = (1200 + 1300 + 1000) / 3; // 평균 판매량
-    const fourth = parseInt(prompt('4분기 판매량은?', '0'));
-    const res = fourth > avgSales ? '판매량이 평균 이상입니다.' : '판매량이 평균 미달입니다.'
+    const fourth = Number(prompt('4분기 판매량은?', '0'));
+    const res = fourth >= avgSales ? '판매량이 평균 이상입니다.' : '판매량이 평균 미달입니다.'
     document.write(res);
+
+    // js 는 연산할 때 바로 숫자로 바궈줌(덧셈은 안댐), 그래서 굳이 Number 안씌워줘도 댐(js 만 가능!!)
 
   </script>
 </body>

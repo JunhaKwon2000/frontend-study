@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- <input type="number"> -->
+  <input type="number">
 
   <script>
     // 1번 문제
@@ -15,10 +15,17 @@
 
 
     // 1번 풀이
-    const x = parseInt(prompt('숫자 1'));
-    const y = parseInt(prompt('숫자 2'));
+    const x = Number(prompt('숫자 1'));
+    const y = Number(prompt('숫자 2'));
     document.write(x + y);
     console.log(x + y);
+
+    // (참고) 입력받은 데이터가 문자인 경우 숫자로 바꿀 때
+    // 예: number input(tag) - 이거 value string 임 -> 이거 바꿔주셈
+    document.querySelector('input[type="number"]').addEventListener('input', function () {
+      console.log(this.value)
+      console.log(typeof this.value)
+    });
   </script>
 </body>
 </html>
