@@ -23,13 +23,17 @@
     }
     else {
       const yn = confirm('부모님과 함께 오셨나요?');
-      if (yn) {
-        document.write('좋은 시간 보내렴~');
-      }
-      else {
-        document.write('어른 모시고 다시 오렴~');
-      }
+      // if (yn) {
+      //   document.write('좋은 시간 보내렴~');
+      // }
+      // else {
+      //   document.write('어른 모시고 다시 오렴~');
+      // }
+      const msg = yn ? '좋은 시간 보내렴~' : '어른 모시고 다시 오렴~';
+      document.write(msg);
     }
+
+
   </script>
 </head>
 <body>
