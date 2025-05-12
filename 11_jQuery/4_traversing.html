@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traversing</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <ul id="one" class="level-1">
+    <li class="item-i">I</li>
+    <li id="ii" class="item-ii">II
+      <ul class="level-2">
+        <li class="item-a">A</li>
+        <li class="item-b">B
+          <ul class="level-3">
+            <li class="item-1">1</li>
+            <li class="item-2">2</li>
+            <li class="item-3">3</li>
+          </ul>
+        </li>
+        <li class="item-c">C</li>
+      </ul>
+    </li>
+    <li class="item-iii">III</li>
+  </ul>
+
+  <script>
+    // 제이쿼리 탐색 참고: https://api.jquery.com/category/traversing/
+
+    // 1. find() - 현재 선택된 요소 내부의 모든 자손 요소 중 일치하는 요소를 찾음
+    // $('li.item-ii').find('li').css({'color': 'blue', 'font-weight': 'bold'});
+    
+    // 2. parent() - 부모 요소(바로 위의 부모만) 하나만 선택
+    // $('li.item-a').parent().css({'color': 'blue', 'font-weight': 'bold'});
+    
+    // 3. closest() - 가장 가까운 상위 요소중에서 파라미터 요소와 일치하는 조상을 찾음(자기 자신 포함), 사용 예시로 어떤 버튼 클릭 시 그 버튼이 속한 div 요소만 찾아서 조작
+    // $('li.item-a').closest('ul').css({'color': 'blue', 'font-weight': 'bold'});
+    // $('li.item-a').closest('li').css({'color': 'blue', 'font-weight': 'bold'});
+    
+    // 4. children() - 직계 자식 요소만 선택(모든 하위 요소가 아니라, 한 단계 아래의 자식만 탐색)
+    // $('ul.level-2').children().css({'color': 'blue', 'font-weight': 'bold'});
+    </script>
+
+  <hr>
+
+  <ul id="two">
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li class="third-item">list item 3</li>
+    <li>list item 4</li>
+    <li>list item 5</li>
+    <li>list item 6</li>
+  </ul>
+
+  <script>
+  // 5. first() - 선택된 요소들 중 처음(비표준, 사용하지 마세요)
+  // $('#two li').first().css({'color': 'blue', 'font-weight': 'bold'});
+  
+  // 6. last() - 선택된 요소들 중 마지막(비표준, 사용하지 마세요)
+  // $('#two li').last().css({'color': 'blue', 'font-weight': 'bold'});
+  
+  // 7. eq() - 선택된 요소들 중 지정한 인덱스의 요소만 선택
+  // $('#two li').eq(2).css({'color': 'blue', 'font-weight': 'bold'});
+  
+  // 8. filter() - 선택된 요소들 중 조건에 맞는 요소만 선택 (jQuery 의 :nth-child() 는 index 가 1부터)
+  // $('#two li').filter(':nth-child(2n)').css({'color': 'blue', 'font-weight': 'bold'});
+  
+  // 9. siblings() - 선택된 요소를 제외한 같은 부모를 공유하는 형제들을 선택, 사용 예시로 메뉴나 탭 전환 기능에서 .addClass() 와 .removeClass() 조합으로 자주 쓰임
+  // $('#two li.third-item').siblings().css({'color': 'blue', 'font-weight': 'bold'});
+  
+  // 10. next() - 선택된 요소 바로 다음 형제 요소를 선택 (nextAll() - 모두)
+  // $('#two li.third-item').next().css({'color': 'blue', 'font-weight': 'bold'});
+  // $('#two li.third-item').nextAll().css({'color': 'blue', 'font-weight': 'bold'});
+  
+  // 11. prev() - 선택된 요소 바로 이전 형제 요소를 선택 (prevAll() - 모두)
+  // $('#two li.third-item').prev().css({'color': 'blue', 'font-weight': 'bold'});
+  // $('#two li.third-item').prevAll().css({'color': 'blue', 'font-weight': 'bold'});
+  </script>
+
+  <hr>
+
+  <ul class="first">
+    <li class="foo">list item 1</li>
+    <li>list item 2</li>
+    <li class="bar">list item 3</li>
+  </ul>
+  <ul class="second">
+    <li class="foo">list item 1</li>
+    <li>list item 2</li>
+    <li class="bar">list item 3</li>
+  </ul>
+
+  <script>
+  // 12. end() - 바로 이전에 선택된 요소로 되돌아감(N 번 쓰면 N 번 전에 선택된 요소로 되돌아감, 여러 조작을 연달아 체이닝해야할 경우 유리하나 너무 길게 쓰면 복잡해서 코드의 가독성 저해)
+  // $('ul.first').find('.foo').css({'color': 'blue', 'font-weight': 'bold'}).end().find('.bar').css({'color': 'red', 'font-weight': 'bold'});
+  // $('ul.first').find('.foo').css({'color': 'blue', 'font-weight': 'bold'}) // end() 없이 선택
+  // $('ul.first').find('.bar').css({'color': 'red', 'font-weight': 'bold'}) // end() 없이 선택
+  </script>
+</body>
+</html>
