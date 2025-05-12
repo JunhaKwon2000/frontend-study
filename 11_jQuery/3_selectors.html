@@ -236,7 +236,7 @@
           $('[type="text"]').addClass('selected');
           break;
         case '[type="text"]:disabled':
-          $('[type="text"]:disabled').addClass('selected');
+          $('[type="text"][value="disabled"]').addClass('selected');
           break;
         case '[type="text"]:enabled':
           $('[type="text"]:enabled').addClass('selected');

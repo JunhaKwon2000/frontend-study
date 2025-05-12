@@ -12,7 +12,7 @@
 
     // ready() - HTML 문서의 DOM 이 완전히 로드된 후에 내부 코드를 실행하게 보장, 대부분의 경우 사용하는 것이 바람직함
     // $(document).ready(() => $('p').click(() => window.alert('클릭')));
-    $(() => $('p').click(() => window.alert('클릭'))); // 축약형
+    $(() => $('p').on('click', () => window.alert('클릭'))); // 축약형
   </script>
 
   <style>

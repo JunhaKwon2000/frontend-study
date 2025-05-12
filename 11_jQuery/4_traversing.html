@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traversing</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    /* #two li:nth-child(2n-1) {
+      color: blue;
+    } */
+  </style>
 </head>
 <body>
   <ul id="one" class="level-1">
@@ -61,7 +66,7 @@
   // $('#two li').last().css({'color': 'blue', 'font-weight': 'bold'});
   
   // 7. eq() - 선택된 요소들 중 지정한 인덱스의 요소만 선택
-  // $('#two li').eq(2).css({'color': 'blue', 'font-weight': 'bold'});
+  $('#two li').eq(2).css({'color': 'blue', 'font-weight': 'bold'});
   
   // 8. filter() - 선택된 요소들 중 조건에 맞는 요소만 선택 (jQuery 의 :nth-child() 는 index 가 1부터)
   // $('#two li').filter(':nth-child(2n)').css({'color': 'blue', 'font-weight': 'bold'});

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+
+  <style>
+    p {
+      margin: 4px;
+      font-size: 16px;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+    .blue {
+      color: blue;
+    }
+    .highlight {
+      background: yellow;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <h2>Greetings</h2>
+  <div class="container">
+    <div class="inner">Hello</div>
+    <div class="inner">Goodbye</div>
+  </div>
+
+  <div class="container">
+    <div class="hello">
+      Hello, <span>Person</span> <em>and person</em>.
+    </div>
+    <div class="goodbye">Goodbye</div>
+  </div>
+
+  <script>
+    // 제이쿼리 엘리먼트 조작 참고: https://api.jquery.com/category/manipulation/
+
+    // 1. 자식으로 삽입 - append(), appendTo(), html(), prepend(), prependTo(), text()
+    // $('.inner').append('<p>테스트</p>'); // 자식(첫번째)으로 삽입
+    // $('<p>테스트</p>').appendTo('.inner'); // 위치만 바뀜
+    // $('.inner').prepend('<p>테스트</p>'); // 자식(마지막)으로 삽입
+    // $('<p>테스트</p>').prependTo('.inner'); // 위치만 바뀜
+
+    // 2. 형제로 삽입 after(), before(), insertAfter(), insertBefore()
+    // $('.inner').after('<p>테스트</p>'); // 다음 형제
+    // $('<p>테스트</p>').insertAfter('.inner'); // 위치만 바뀜
+    // $('.inner').before('<p>테스트</p>'); // 이전 형제
+    // $('<p>테스트</p>').insertBefore('.inner'); // 위치만 바뀜
+
+
+    // 3) 부모로 감싸기 (.unwrap(), .wrap(), .wrapAll(), .wrapInner())
+    // $('.inner').eq(0).wrap('<div class="blue"></div>'); // 감싸기
+    // $('.inner').eq(0).unwrap(); // 풀기
+
+    // 4) 삭제 (.detach(), .empty(), .remove(), .unwrap())
+    // $('.hello').remove(); // 제거
+    // $('.hello').empty(); // 요소 안의 내용(모든 자식 요소) 비우기
+
+    // 5) 치환 (.replaceAll(), .replaceWith())
+    $('.inner').replaceWith('<h2>New Heading</h2>'); // 교체 (바꿀 대상 - 넣을 내용)
+    // $('<h2>New Heading</h2>').replaceAll('.inner'); // 위치만 바뀜 (넣을 내용 - 바꿀 대상)
+  </script>
+
+  <p class="blue">Click to toggle</p>
+  <p class="blue highlight">highlight</p>
+  <p class="blue">on these</p>
+  <p class="blue">paragraphs</p>
+
+  <script>
+    // 6) 클래스 (.addClass(), .hasClass(), .removeClass(), .toggleClass())
+    $('p').on('click', function() {
+      $('p').removeClass('highlight');
+      $(this).toggleClass('highlight');
+    })
+  </script>
+
+  <input type="text" value="some text">
+  <p class="target"></p>
+
+  <input type="checkbox" id="chk" checked>
+
+  <script>
+    // 7) 속성제어 (.attr(), .prop(), .removeAttr(), .removeProp(), .val())
+    $('input[type="text"]').on('keyup', function () {
+      const v = $(this).val();
+      $('p.target').html(v);
+    }).trigger('keyup');
+
+    // attr(): HTML 속성(attribute), 원래 설정된 초기 HTML 속성의 값
+    // prop(): DOM 속성(property), 현재 DOM 객체의 실시간 상태 반영(주로 checked, selected, disabled 등에 쓰임)
+    $('#chk').on('change', function () {
+      console.log($(this).attr('checked')); // 초기 HTML 에 있는 속성값을 그대로 읽음(checked="checked" 이므로 문자열 읽어옴)
+      console.log($(this).prop('checked')); // true / false 값을 return 함(실제 체크 상태 반영)
+    })
+  </script>
+</body>
+</html>
